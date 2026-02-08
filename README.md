@@ -13,14 +13,14 @@
 ## Some rails commands 
 
 #### create this rails application -> rails new App_Name -d  postgresql   (here d for custom database)
-#### to start ther rails server -> rails s    
-#### create rails database -> rails db:create     
-#### now setup the database.yml file by pasting the code ->   
-###### development:   
-######  <<: *default     
-######  database: postgres     
-######  username: postgres    
-######  password: YOUR_PASSWORD     
+### to start ther rails server -> rails s    
+### create rails database -> rails db:create     
+### now setup the database.yml file by pasting the code ->   
+##### Inside:   
+#####  default: &default     
+#####  database: postgres     
+#####  username: postgres   (if ur username is postgres)
+#####  password: YOUR_PASSWORD     
 
 #### Then try running Your app (it should run without error)
 
@@ -213,18 +213,18 @@ Examples:
 Example SQL:
 
 ```sql
-INSERT INTO product1s (name, description, price, stock, is_active, created_at, updated_at)
+INSERT INTO products (name, description, price, stock, is_active, created_at, updated_at)
 VALUES ('IQ', 'The IQ new product', 80, 2, TRUE, '2026-01-16', '2026-01-16');
 ```
 
 Example seed:
 
 ```ruby
-Product1.create(name: "P1", description: "The P1 product", price: 900, stock: 30, is_active: true)
+Product.create(name: "P1", description: "The P1 product", price: 900, stock: 30, is_active: true)
 ```
 ---
 
-**Day 6 – Ruby Loops & Enumerable Methods**
+## Day 6 – Ruby Loops & Enumerable Methods
 
 ##  Ruby Loops
 
@@ -543,12 +543,10 @@ class Product
 end
 ```
 
-**Day 9 Rails Models: Customer & Product Validations**
+## Day 9 Rails Models: Customer & Product Validations
 
-## Customer Model (`Customer < ApplicationRecord`)
----
-
-### **Built-in Validations**
+### Customer Model (`Customer < ApplicationRecord`)
+### Built-in Validations
 
 * Name is **required** and limited to 3–20 characters:
 
@@ -562,9 +560,9 @@ validates :name, presence: true, length: { minimum: 3, maximum: 20 }
 validates :email, presence: true, uniqueness: true
 ```
 
-### **Custom Validations**
+### Custom Validations
 
-* **Profanity check** for `name` and `email`:
+#### Profanity check for `name` and `email`:
 
 ```ruby
 validate :deny_profanity
@@ -584,7 +582,7 @@ def check_email
 end
 ```
 
-### **Usage Example (Rails Console)**
+#### Usage Example (Rails Console)
 
 ```ruby
 customer = Customer.first
@@ -592,11 +590,9 @@ customer.check_email
 customer.check_name
 ```
 
----
-
 ## Product Model (`Product < ApplicationRecord`)
 
-### **Built-in Validations**
+### Built-in Validations
 
 * Name, description, stock, price, and is_active are validated:
 
@@ -609,11 +605,12 @@ validates :is_active, presence: true, acceptance: true, if: :price?
 validates :stock, presence: true, if: :is_active?
 ```
 
-### **Custom Validation**
+### Custom Validation
 
 * Ensure `is_active` is checked only if `price` and `stock` are present:
 
 ```ruby
+
 validate :check_is_active
 
 def check_is_active
@@ -623,9 +620,9 @@ def check_is_active
 end
 ```
 
-### **Helper Methods**
+### Helper Methods
 
-* **Check description validity**:
+#### Check description validity:
 
 ```ruby
 def check_validity
@@ -661,8 +658,7 @@ def total_amount
 end
 ```
 
-## Notes with some imp points about code ...-->
-
+### Notes with some imp points about code 
 
 1. **Built-in validations cover most use-cases**
 
@@ -714,16 +710,16 @@ end
 
     * Always try creating invalid and valid records in the console to confirm your rules work.
 
-**Day 10 – Rails Scopes**
+## Day 10 – Rails Scopes
 
-A **scope** is a custom query defined in a Rails model. It is mainly used when the same query is needed multiple times.
+#### Def:- A scope is a custom query defined in a Rails model. It is mainly used when the same query is needed multiple times.
 ---
 
 ## Scope Examples
 
-### 1. Out of Stock product1s
+### 1. Out of Stock products
 
-Fetch product1s whose stock is zero or less.
+Fetch products whose stock is zero or less.
 
 ```ruby
 scope :out_of_stock, -> { where("stock <= ?", 0) }
@@ -743,12 +739,12 @@ scope :test_scope, -> { query {} }
 
 ---
 
-### 3. Whitelisted product1s
+### 3. Whitelisted products
 
-Fetch product1s whose IDs are in a given list.
+Fetch products whose IDs are in a given list.
 
 ```ruby
-scope :whitelisted_product1s, -> { where("id IN (?)", [1, 2, 3]) }
+scope :whitelisted_products, -> { where("id IN (?)", [1, 2, 3]) }
 ```
 
 ---
@@ -786,14 +782,14 @@ Scopes can be chained together because they return ActiveRecord relations.
 Example:
 
 ```ruby
-Product.out_of_stock.whitelisted_product1s
+Product.out_of_stock.whitelisted_products
 ```
 
 ---
 
-## Controller Examples ---like how will use
+#### Controller Examples ---like how will use
 
-### Customers Controller
+#### Customers Controller
 
 ```ruby
 def index
@@ -804,19 +800,19 @@ end
 
 ---
 
-### product1s Controller
+#### products Controller
 
 ```ruby
 def index
-  @product1s = Product.out_of_stock
+  @products = Product.out_of_stock
 end
 ```
 
 ---
 
-**Day 11 -> Republic Day (no task given)**
+## Day 11 -> Republic Day (no task given)
 
-**Day 12 - Notes**
+## Day 12 - Notes
 
 | Component Name        | Available From (Rails) | What it is / Why it is used                                                                                        |
 | --------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -855,14 +851,14 @@ app/models/admin.rb → model file
 db/migrate/XXXXXXXX_create_admins.rb → migration file
 test/models/admin_test.rb → model test file
 test/fixtures/admins.yml → test data
-
-then run this command: rails db:migrate is used to modify the database schema   
 ```
+* then run this command: rails db:migrate is used to modify the database schema   
+
 * If we Deleting show.html.erb file
 * Error: ActionController::UnknownFormat in CustomersController#show CustomersController#show is missing a template for this request format.
 
-why?
-Show action(method) exists in the controller and when we hit that url it will try to call the show.html.erb view file, which is missing.
+** why?**   
+* Show action(method) exists in the controller and when we hit that url it will try to call the show.html.erb view file, which is missing.   
 
 ---
 
@@ -871,9 +867,14 @@ Show action(method) exists in the controller and when we hit that url it will tr
 resources :products, except: [:show]
 resources :products, only: [:new, :destroy]
 ```
-* To skip a route from being created via resources we use except
-* To create only a specific set of routes we use only.  
-* Then If we try to open show page
+
+* resources :products, except: [:show] (It will create index, new, create, edit, update, destroy but not show page).   
+* Then If we try to open show page. Will get 
+```ruby
+Error Class: ActionController::RoutingError ( "No route matches [GET] '/products/1'" (or whatever ID you use)) 
+```
+* To create only a specific set of routes we use -> only.  
+* only these routes will be create -> [:new, :destroy]
 * URL: /products/1    -> (here 1 is id to show)  
 ```ruby 
 Error we get: We will get this error,ActionController::RoutingError , No route matches [GET] "/products/1"
@@ -881,7 +882,7 @@ Error we get: We will get this error,ActionController::RoutingError , No route m
 
 --- 
 
-**Day 13 (add_column, action_text)**
+## Day 13 (add_column, action_text)
 
 ### Some routes commands:
 
@@ -896,13 +897,13 @@ rails route | grep product_path
 
 ### For adding column in your Database (follow the case):
 ```ruby 
-command : rails generate migration className_with_tableName column_name:datatype_based_sql
+command :- rails generate migration className_with_tableName column_name:datatype_based_sql
 
 Ex:- rails generate migration AddColumnPhoneToCustomer1 phone_number:integer
 
 Then Run: rails db:migrate
 ```
-* then add that excate column name in table_name_controller.
+* then add that exact column name in table_name_controller.
 * In here we need to pass proper readable classname with attached table name and then column_name as we want.
 * then check in Your schema.rb it is added or not.
 
@@ -921,14 +922,14 @@ for rails version 8 -> rails importmap:install
 for rails version 7 -> rails javascript:install
 ```
 
-* to bring rich text editing capabilities to your Rails application form like (adding media files, adding underlines,itallic,bullets point in the textarea,etc).
+* to bring rich text editing capabilities to your Rails application form like (adding media files, adding underlines, itallic, bullets point in the textarea, etc).
 
 * Then run below command: 
 
 ```ruby 
-command : rails action_text:install
+command :- rails action_text:install
 ```
-* This will modify above mentioned file two of the file and create a new file with actiontext.css in app/assets/stylesheet
+* This will modify above mentioned two files and create a new file with actiontext.css in app/assets/stylesheet
 
 ## Tasks :
 
@@ -946,7 +947,7 @@ command : rails action_text:install
   these are the some code snippets added.
 ```  
 
-### 2) Inspect in each controller method and acknowledgement using below command:
+### 2) To inspect in each controller method and acknowledgement using below command:
 
 ```ruby
   rails params:inspect
@@ -966,7 +967,7 @@ p a1&a1     # [1, 2, 3, 6, nil, 4, 5, ""]
 
 ### 4) Implement action_text in Product and Customer table 
 
-* Did changes in the code for implementing it in.
+* Did changes in the code for these files for implementing it.
 ```begin
 steps 1: model/product.rb
 steps 2: product_controller.rb(in that product_params action)
@@ -975,15 +976,15 @@ steps 3: write in view (_form, _edit,etc).
 
 ---
 
-**Day 14 (active_storage, column_adding_migration)**
+## Day 14 (active_storage, column_adding_migration)
 
 ## Tasks :
 
 ### 1) create column for invoice through attachment (has_one_attached) in product table
 
-* Step 1: add this in table.rb (model) file -> has_one_attached:column_name
+* Step 1: add this in table.rb (model) file -> has_one_attached: column_name
 * step 2: add the same col_name (in symbol form) in def customer1_params of controller.  
-* step 3: then implement it in the view wherever needed(in html.erb files). 
+* step 3: then implement it in the view wherever needed(in html.erb files). (Like this -> <%= form.rich_text_area :col_name %> )
 
 ### 2) create column dateofbirth(DOB) in customer using generate migration.
 
@@ -1001,20 +1002,25 @@ Ex : rails generate migration AddColumnBirthDateToCustomer1 birth_date:date
 
 ### For active storage installation
 ```ruby
-rails active_storage:installing
+* Install using terminal :- rails active_storage:install
+* this should be :local if not change it :- config.active_storage.service = :local
+* Follow task 1 to use.
+* for cloud configration we configure config/storage.yml
 ```
 
-### Sequence Order for writing in model.rb file (good practice)
+### For using active_storage in Html use -> <%= form.file_field :col_name %> 
 
-* 1) action_text/storage
+### Priority Order for writing in model.rb file (good practice)
+
+* 1) action_text/storage (at the top most)
 * 2) validation
 * 3) scopes
 * 4) methods
 
-### For multiple data adding/selection using html.erb add -> multiple:true (in .html.erb file)
+### For allowing multiple file adding/selection using html.erb add -> multiple:true (in .html.erb file)
 ---
 
-**Day 15 (Action_Mailer)**
+## Day 15 (Action_Mailer) (first sending we will configure)
 
 ## Tasks : create Order table in same application
 * Step 1 generate model with col names(details:string, count:int)
@@ -1024,13 +1030,13 @@ rails active_storage:installing
 
 ## Concepts and commands
 
-### Rails Action Mailer with Letter Opener – Step‑by‑Step Notes# Rails Action Mailer with Letter Opener – Step-by-Step
+### Rails Action Mailer with Letter Opener – Step‑by‑Step Notes Rails Action Mailer with Letter Opener – Step-by-Step
 
 #### Protocols(rules) for mails - SMTP, POP, IMAP
-#### Restapi is capable of handling all type of data like JSON, XML, Has,etc.  
+####  Restful api is capable of handling all type of data like JSON, XML, Hash, etc.  
 
 ### What is Action Mailer?
-* Action Mailer is used to send emails from a Rails application.This class is present in rails since begining.
+* Action Mailer is used to send emails from a Rails application.This class is present in rails since rails V.1
 * It is commonly used for:
   * Welcome emails
   * Password reset emails
@@ -1116,7 +1122,7 @@ Create file:
       your email is: <%= @customer.email %>.<br>
     </p>
 
-    <p>Thanks for joining and have a fun-tastic day!</p>
+    <p>Thanks for joining and have a fantastic day!</p>
   </body>
 </html>
 ```
@@ -2029,7 +2035,7 @@ Existing data needs special handling while adding relationships
 
 ---
 
-# Day 20 - Many-to-Many Association using HABTM (Product1 & Tag table)
+# Day 20 - Many-to-Many Association using HABTM (Product & Tag table)
 
 Rails supports many-to-many relationships in two standard ways:
 

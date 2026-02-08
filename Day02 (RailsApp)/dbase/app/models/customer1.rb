@@ -1,7 +1,7 @@
 class Customer1 < ApplicationRecord
 
     has_one_attached:profile_pic
-
+    
     has_rich_text:aboutme   # this allows action_text
 
     validates :name , presence: true

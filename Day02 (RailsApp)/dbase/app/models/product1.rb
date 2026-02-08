@@ -8,12 +8,12 @@ class Product1 < ApplicationRecord
     has_many :offers, through: :product1s_offers
 
 
-
-    has_one_attached:invoice
-    has_many_attached:product_pic
-
+    # Day15
+    has_one_attached: invoice
+    has_many_attached: product_pic
     # has_one_attached:product_pic
 
+    # Day14
     has_rich_text :feedback
 
     validate :invoice_format
@@ -72,6 +72,7 @@ class Product1 < ApplicationRecord
 
     # if product is inactive (not marked checked) then we don't add the price only
     validate :only_price
+
 
     def only_price
         if is_active == false

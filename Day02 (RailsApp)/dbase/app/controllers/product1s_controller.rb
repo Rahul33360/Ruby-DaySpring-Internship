@@ -74,6 +74,7 @@ class Product1sController < ApplicationController
       @product1 = Product1.find(params.expect(:id))
     end
 
+    # Day14, Day15
     # Only allow a list of trusted parameters through.
     def product1_params
       params.expect(product1: [ :name, :descripition, :price, :stock, :is_active, :feedback, :email ,:invoice,product_pic:[]]) # and invoice as attachment
