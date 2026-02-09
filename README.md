@@ -454,11 +454,11 @@ Key Difference:
 
 ---
 
-**Day 8 – Conditional Statements & Methods in Ruby**
----
-## 1. Conditional Statements
+## Day 8 – Conditional Statements & Methods in Ruby
 
-### if / else
+### 1. Conditional Statements
+
+#### if / else
 
 Check a condition and run code accordingly:
 

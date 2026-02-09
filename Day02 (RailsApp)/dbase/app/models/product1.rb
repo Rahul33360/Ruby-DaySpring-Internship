@@ -9,8 +9,8 @@ class Product1 < ApplicationRecord
 
 
     # Day15
-    has_one_attached: invoice
-    has_many_attached: product_pic
+    has_one_attached :invoice
+    has_many_attached :product_pic
     # has_one_attached:product_pic
 
     # Day14

@@ -1,8 +1,10 @@
 <%= form_with(model: product1, class: "product1-form") do |form| %>
   <% if product1.errors.any? %>
     <div style="color: red" class="form-errors">
-      <h2 class="form-errors__title"><%= pluralize(product1.errors.count, "error") %> prohibited this product1 from being saved:</h2>
-
+      <h2 class="form-errors__title">
+        <%= pluralize(product1.errors.count, "error") %> 
+        prohibited this product1 from being saved:
+      </h2>
       <ul class="form-errors__list">
         <% product1.errors.each do |error| %>
           <li class="form-errors__item"><%= error.full_message %></li>
