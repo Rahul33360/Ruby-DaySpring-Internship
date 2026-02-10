@@ -7,6 +7,10 @@ class Customer1 < ApplicationRecord
     validates :name , presence: true
     validates :email, presence: true
 
+    # Day22
+    # has_one_belongs
+    belongs_to :order
+
     # validates :profile_pic, content_type: ['image/png', 'image/jpg', 'image/jpeg']
     # non-parameterised scope.
     # scope :unique_email, -> {where(email: "rahul@grmail.com").pluck(:email)}   # first email is table column name, second one is object attribute model name (tableColumn: ObjectAttribute) 

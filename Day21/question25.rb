@@ -1,0 +1,1 @@
+has_rich_text :description

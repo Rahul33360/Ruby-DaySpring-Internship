@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exp_date: 2026-02-10
+  active: false
+  product1: one
+  offer: one
+
+two:
+  exp_date: 2026-02-10
+  active: false
+  product1: two
+  offer: two

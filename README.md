@@ -20,7 +20,8 @@
 #####  default: &default     
 #####  database: postgres     
 #####  username: postgres   (if ur username is postgres)
-#####  password: YOUR_PASSWORD     
+#####  password: YOUR_PASSWORD  
+#####  host: localhost   
 
 #### Then try running Your app (it should run without error)
 
@@ -2333,5 +2334,259 @@ p1.tags.pluck(:name)
 ```
 
 These return all tag names related to the product.
+
+---
+
+
+## Day 22
+
+### Rollback Commands
+
+#### rails db:rollback
+
+```ruby
+rails db:rollback
+```
+
+* Rolls back the last migration.
+
+* Not used inside Rails console.  
+* It is used in terminal.
+
+#### rails db:rollback STEP=3
+
+```ruby
+rails db:rollback STEP=3
+```
+
+* Rolls back the last 3 migrations.
+
+* It will undo the last three migration files in reverse order.
+
+#### Important Points
+
+* No need to run `rails db:migrate` immediately after rollback unless you want to apply migrations again.
+
+
+### schema.rb
+
+After every migration, `schema.rb` gets updated automatically.
+
+Example:
+
+```
+schema.rb (version: 2026_02_10_061916)
+```
+
+The version changes after every successful migration.
+
+
+### change, up, down (Migration Methods)
+
+#### change
+
+Default method used in migration.
+
+Rails automatically knows how to reverse it.
+
+#### up
+
+Defines what should happen when migration runs.
+
+#### down
+
+Defines what should happen when migration rolls back.
+
+Used when Rails cannot auto reverse (like modifying datatype).
+
+For modifying datatype, sometimes `up` and `down` methods are required instead of `change`.
+
+
+### Destroy Model
+
+```ruby
+rails destroy model ClassName
+```
+
+Deletes:
+
+* Model file
+* Migration file
+* Related test files
+
+
+### has_many :through vs HABTM
+
+#### has_many :through
+
+Model required.
+
+Join table will have its own model.
+
+Gives separate table.
+
+#### has_and_belongs_to_many (HABTM)
+
+No model required.
+
+Only join table required.
+
+No separate model logic.
+
+
+### Creating has_many :through Example
+
+#### Command Used
+
+```ruby
+rails g model Subscription type:string exp_date:date active:boolean product:references offer:references
+rails db:migrate
+```
+
+Subscription -> singular model name.
+
+It is bidirectional.
+
+So we must define association in both models:
+
+* belongs_to in Subscription
+* has_many in Product
+* has_many in Offer
+
+
+### Rails Console Commands for Associations
+
+#### Fetching Object
+
+```ruby
+p1 = Product.last
+```
+
+#### Get Related Offers
+
+```ruby
+p1.offers
+```
+
+#### Reload Association (Refresh Data)
+
+```ruby
+p1.offers.reload
+```
+
+* Used to refresh data instead of using cached result.
+
+#### Get Offer IDs
+
+```ruby
+p1.offer_ids
+```
+
+* Returns ids in array related to that object.
+
+#### Check if Association is Empty
+
+```ruby
+p1.offers.empty?
+```
+
+* Checks whether there is any associated offer.
+
+#### Get Size of Association
+
+```ruby
+p1.offers.size
+```
+
+* Returns count of associated offers.
+
+#### Check if Offers Exist
+
+```ruby
+p1.offers.exists?
+```
+
+* Checks whether at least one offer exists.
+
+#### Find by Column
+
+```ruby
+p1.offers.find_by(offer_name: "Republic_day_sale")
+```
+
+* Find offer by column value.
+
+#### Clear All Associated Records
+
+```ruby
+Product.find(1).offers.clear
+```
+
+* Removes all associated records for that object.
+* Returns empty array.
+
+
+### Association Commands Given
+
+#### Attach Existing Offer to Product
+
+```ruby
+productObj = Product.find(5)
+offerObj = Offer.find(2)
+productObj.offers << offerObj
+```
+
+* Creates entry in join table.
+
+#### Create Offer from Association
+
+```ruby
+productObj.offers.create(attributes)
+```
+
+* Automatically sets foreign keys.
+
+#### Delete Specific Association
+
+```ruby
+productObj.offers.delete(offerObj)
+```
+
+* Removes relationship but does not delete offer record.
+
+
+### Add Reference to Existing Table
+
+```ruby
+rails generate migration AddReferenceNameToTableName reference_table_name_in_singular:references
+```
+
+* Adds foreign key column to existing table.
+
+
+### Updating Extra Columns in Join Table (has_many :through)
+
+* Since Subscription is a join model, it can have extra attributes.
+
+#### Update Single Subscription
+
+```ruby
+subscriptionObj.update(status: 'active', renewal_date: 1.month.from_now)
+```
+
+#### Update Specific Subscription in Collection
+
+```ruby
+productObj.subscriptions.where(offer_id: 5).update_all(status: 'active')
+```
+
+#### Update All Subscriptions Based on Condition
+
+```ruby
+productObj.subscriptions.each do |sub|
+  sub.update(status: 'expired') if sub.exp_date < Date.today
+end
+```
+* Used to modify all subscriptions of a product based on condition.
 
 ---

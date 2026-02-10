@@ -1,11 +1,17 @@
 class Product1 < ApplicationRecord
 
+    #  Day22
+    #  many to many - product has many orders
+    has_many :subscriptions
+    has_many :offers, through: :subscriptions
+
+
     # Day19
     has_many :orders, dependent: :destroy
 
     # Day20
     has_and_belongs_to_many :tags
-    has_many :offers, through: :product1s_offers
+    # has_many :offers, through: :product1s_offers
 
 
     # Day15

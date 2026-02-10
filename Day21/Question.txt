@@ -1,0 +1,27 @@
+1. Write Ruby code to store a user’s name and age, and print a sentence using string interpolation.
+2. Write Ruby code to take user input for age using gets, remove the newline, convert it to an integer, and print the age after 5 years.
+3. Write Ruby code that prints the numbers 1 2 3 on the same line, and then prints the same numbers on separate lines.
+4. What will be the output of the following Ruby code?
+	name = "rails"
+	puts name.capitalize
+5. Write Ruby code to iterate over the array [10, 20, 30] and print each value.
+6. Write Ruby code to convert the array [1, 2, 3, 4] into [2, 4, 6, 8].
+7. Write Ruby code to select only even numbers from the array [1, 2, 3, 4, 5, 6].
+8. Write Ruby code to find the sum of numbers in the array [5, 10, 15].
+9. Write Ruby code to check if any number in [1, 3, 5, 6] is even and if all numbers in [2, 4, 6] are even.
+10. Write Ruby code to print "Pass" if marks are greater than or equal to 40, otherwise print "Fail".
+11. Write Ruby code to print "Not Active" unless a variable active is true.
+12. Write Ruby code to print numbers from 1 to 5 using a while loop.
+13. Write Ruby code to print numbers from 1 to 5 using an until loop.
+14. Write Ruby code using loop and break to print numbers starting from 1 and stop when the number reaches 4.
+15. Write a Ruby class Student with attributes name and age, and a method details that prints the name and age.
+16. Create two Ruby objects, print their object_id, and check whether the object IDs are the same or different.
+17. Write Ruby code to print the ancestor chain of a custom class Student.
+18. Write a Rails route that handles a GET request and maps to the index action of StudentsController.
+19. Write a Rails controller action index that fetches all students and stores them in an instance variable.
+20. Write a Rails model validation to ensure the email attribute is present for a Student.
+21. Write a Rails scope to fetch records created within the last 7 days.
+22. Write the Rails console command to create a new student with a name and email.
+23. Write a private strong parameters method in a Rails controller to permit name and email for Student.
+24. Write Rails model code to allow multiple file uploads for a record.
+25. Write Rails model code to enable rich text content for a description field.

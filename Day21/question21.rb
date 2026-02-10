@@ -1,0 +1,1 @@
+scope :sevenday, -> { where("created_at >= ?",7.days.ago)}

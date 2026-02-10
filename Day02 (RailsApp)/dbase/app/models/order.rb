@@ -4,4 +4,7 @@ class Order < ApplicationRecord
     # Day19
     belongs_to :product1
 
+    # Day22
+    has_one :customer
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_06_063707) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_10_061916) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -71,8 +71,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_06_063707) do
     t.datetime "created_at", null: false
     t.string "email"
     t.string "name"
+    t.bigint "order_id"
     t.integer "phone_number"
     t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_customer1s_on_order_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -85,10 +87,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_06_063707) do
 
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.bigint "customer1_id"
     t.string "details"
     t.integer "order_count"
     t.bigint "product1_id"
     t.datetime "updated_at", null: false
+    t.index ["customer1_id"], name: "index_orders_on_customer1_id", unique: true
     t.index ["product1_id"], name: "index_orders_on_product1_id"
   end
 
@@ -109,18 +113,20 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_06_063707) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "product1s_offers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.bigint "offer_id", null: false
-    t.bigint "product1_id", null: false
-    t.datetime "updated_at", null: false
-    t.index ["offer_id"], name: "index_product1s_offers_on_offer_id"
-    t.index ["product1_id"], name: "index_product1s_offers_on_product1_id"
-  end
-
   create_table "product1s_tags", id: false, force: :cascade do |t|
     t.bigint "product1_id", null: false
     t.bigint "tag_id", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.date "exp_date"
+    t.bigint "offer_id", null: false
+    t.bigint "product1_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["offer_id"], name: "index_subscriptions_on_offer_id"
+    t.index ["product1_id"], name: "index_subscriptions_on_product1_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -148,8 +154,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_06_063707) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "customer1s", "orders"
+  add_foreign_key "orders", "customer1s"
   add_foreign_key "orders", "product1s"
-  add_foreign_key "product1s_offers", "offers"
-  add_foreign_key "product1s_offers", "product1s"
+  add_foreign_key "subscriptions", "offers"
+  add_foreign_key "subscriptions", "product1s"
   add_foreign_key "vendors", "users"
 end
