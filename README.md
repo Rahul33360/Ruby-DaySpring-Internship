@@ -128,7 +128,7 @@ Controller-only generation: rails generate controller Customers
 
 #### Convention Over Configuration (Rails uses naming conventions to auto-configure behavior).
 
-```bash
+```ruby
 Naming Rules:
 rails generate model Customer   (to generate Customer model, and first letter will be capital like here "Customer" )
 ```
@@ -1378,7 +1378,7 @@ rails db:migrate
 
 
 
-# Active Record Methods
+## Active Record Methods
 
 ### Insert Methods
 
@@ -1424,7 +1424,7 @@ Model.last
 
 Used to fetch records based on position.
 
-# Summary
+## Summary
 
 ## Day 17
 * Namespaced Models
@@ -1433,7 +1433,7 @@ Used to fetch records based on position.
 
 ---
 
-# Day 18 – Active Support & Core Extensions
+## Day 18 – Active Support & Core Extensions
 
 
 ## 1) Core Extensions
@@ -1576,7 +1576,7 @@ These methods work on Strings, Arrays, Hashes, Objects.
 | empty? | checks if collection/string length is zero |
 
 
-# N+1 Query Problem
+## N+1 Query Problem
 
 ## What is the N+1 Query Problem?
 
@@ -1824,7 +1824,7 @@ Meaning:
 Note: Using has_one :vendor (singular) tells Rails that this is a one-to-one relationship.
 
 
-## How Rails Associations Help
+### How Rails Associations Help
 
 With proper associations, Rails provides:
 
@@ -1973,7 +1973,7 @@ Test2.insert({ name: "Rahul", test1_id: 99 })
 
 #### Error
 
-```
+```ruby
 PG::ForeignKeyViolation: ERROR: insert or update on table "test2s"
 violates foreign key constraint "fk_rails_7b882ba334"
 DETAIL: Key (test1_id)=(99) is not present in table "test1s".
@@ -1996,7 +1996,7 @@ Test2.create(name: "Rahul", test1_id: 99)
 ```
 
 
-# After the Task (What we got Issues and Ways to resolve it)
+### After the Task (What we got Issues and Ways to resolve it)
 
 ## Task 1: Create Tables with Relationship and Verify Associations
 
@@ -2044,7 +2044,7 @@ Rails supports many-to-many relationships in two standard ways:
 6. has_and_belongs_to_many (HABTM)
 
 
-# 5. has_many :through
+### 5. has_many :through
 
 This is the recommended approach for most real-world applications.
 
@@ -2074,7 +2074,7 @@ rails db:migrate
 ```
 
 
-## Generated migration:
+### Generated migration:
 
 ```ruby
 class CreateProductOffers < ActiveRecord::Migration[8.1]
@@ -2089,7 +2089,7 @@ end
 ```
 
 
-## Database table:
+### Database table:
 
 ```ruby
 create_table "product_offers" do |t|
@@ -2338,7 +2338,7 @@ These return all tag names related to the product.
 ---
 
 
-## Day 22
+# Day 22
 
 ### Rollback Commands
 
@@ -2590,3 +2590,330 @@ end
 * Used to modify all subscriptions of a product based on condition.
 
 ---
+
+
+# Day 23 – Rails (Associations) & Migrations (and Examples)
+
+### ActiveRecord Associations in Rails
+
+Rails provides six types of associations to manage relationships between models.
+
+| Association               | Description                                                    |
+| ------------------------- | -------------------------------------------------------------- |
+| `has_one`                 | Used for one-to-one relationship                               |
+| `has_one :through`        | Strict one-to-one relationship through another model           |
+| `has_many`                | Used for one-to-many relationship                              |
+| `has_many :through`       | Many-to-many relationship using a join model                   |
+| `has_and_belongs_to_many` | Many-to-many without a join model (only table no model)        |
+| `belongs_to`              | Used on the foreign key side (makes association bidirectional) |
+
+
+### Using Rails Migrations (used to make changes in the database structure)
+
+
+* Creating tables
+* Adding columns
+* Adding references (foreign keys)
+* Renaming tables/columns
+* Removing columns
+* Modifying data types
+* Dropping tables
+
+### Migration Naming Rules
+
+When writing migration names:
+
+### First word should be a **Verb**
+
+  * Create
+  * Add
+  * Remove
+  * Rename
+  * Drop
+  * Modify / Change
+
+### Second word should be a **Noun**
+  * Tab_name
+  * Col_name
+
+
+#### Some Migration Examples :
+
+```ruby
+rails g migration CreateTableBlog title:string:index author:string diption:string
+rails g migration CreateTableUser name:string
+rails g migration AddUserReferenceToBlog user:references  
+rails g migration AddColumnEmailToUser email:string
+rails g migration RemovePhoneFromUser phone_number:integer:index
+rails g migration RenameColumnAuthorInUser
+rails g migration ModifyColumnDiscriptionDatatype 
+rails g migration DropTableUser
+rails g migration CreateTableComments comments:string
+rails g migration CreateTableComments comments:string
+rails g migration Rename_Table
+rails g migration CreateTableDummy
+rails g migration DropTableDummy
+```
+
+###  Steps to perform :
+
+#### Creating a Table
+
+```ruby
+rails generate migration CreateUsers name:string
+```
+
+Generated file:
+
+```ruby
+class CreateUsers < ActiveRecord::Migration[8.1]
+  def change
+    create_table :users do |t|
+      t.string :name
+      t.timestamps
+    end
+  end
+end
+```
+
+
+###  Adding Reference (Foreign Key)
+
+```ruby
+rails generate migration AddUserReferenceToVlogs user:references
+```
+
+Generated migration:
+
+```ruby
+class AddUserReferenceToVlogs < ActiveRecord::Migration[8.1]
+  def change
+    add_reference :vlogs, :user, null: false, foreign_key: true
+  end
+end
+```
+
+Adds:
+
+* `user_id`
+* Index
+* Foreign key constraint
+
+###  Adding a Column
+
+```ruby
+rails generate migration AddPhoneNumberToUsers phone_number:string
+```
+
+###  Removing a Column
+
+```ruby
+rails generate migration RemoveDescriptionFromVlogs description:string
+rails db:migrate
+```
+
+Generated:
+
+```ruby
+remove_column :vlogs, :description, :string
+```
+
+### Renaming a Column
+
+```ruby
+rails generate migration RenameNameToUserNameToUsers
+```
+
+### Generated migration file will be **empty** (change action will be empty)
+
+```ruby
+class RenameNameToUserNameUsers < ActiveRecord::Migration[8.1]
+  def change
+  end
+end
+```
+
+## ⚠️Note: After every migration file generation we need to run -> rails db:migrate
+
+## ⚠️Note: Keep in mind below points
+```ruby
+* For renaming and modifying columns, Rails does NOT generate the method automatically.
+* It creates an empty migration file. We have to manually write/edit the required method inside `def change`.
+* Then run `rails db:migrate`.
+```
+### After modifing :
+
+```ruby
+def change
+  rename_column :users, :name, :user_name
+end
+```
+
+Then run:
+
+```ruby
+rails db:migrate
+```
+
+###  Modifying Column's Data Type
+
+* Example: Changing `phone_number` datatype from integer to string.
+* we generate migration file
+
+```ruby
+rails generate migration ChangePhoneNumberTypeInUsers
+```
+
+* The Generated file will be empty:
+
+```ruby
+class ChangePhoneNumberTypeInUsers < ActiveRecord::Migration[8.1]
+  def change
+  end
+end
+```
+
+* Again, Rails will NOT auto-generate the method. We need to manually write it:
+
+```ruby
+def change
+  change_column :users, :phone_number, :string
+end
+```
+
+###  Renaming a Table
+
+```ruby
+rails generate migration RenameCustomersToUsers
+```
+
+* Editing generated migration file:
+
+```ruby
+def change
+  rename_table :customers, :users
+end
+```
+
+###  Dropping a Table
+
+```ruby
+rails generate migration DropUsers
+```
+
+* Editing generated migration file:
+
+```ruby
+def change
+  drop_table :users
+end
+```
+
+##  Rails DB Commands 
+
+```ruby
+rails db:migrate
+```
+
+* It Runs all pending migrations
+* It Applies all database changes
+* Updates `schema.rb`
+
+
+```ruby
+rails db:rollback
+```
+
+* Reverts the last migration
+* Undo recent database change
+
+
+```ruby
+rails db:rollback STEP=2
+```
+* It also rollback upto given step
+
+
+```ruby
+rails db:migrate:redo
+```
+
+* Rollback + migrate again
+* Useful when testing a migration
+
+
+```ruby
+rails db:migrate:redo STEP=2
+```
+
+* Redo multiple steps 
+
+```ruby
+rails db:reset
+```
+### Beaware before using this db:reset
+
+* Drops database
+* Creates database
+* Runs migrations
+* Runs seeds
+
+* Deletes all data
+
+
+```ruby 
+rails db:seed
+```
+
+* Runs db/seeds.rb file
+* Used to insert default/sample data
+
+
+##  Ruby Methods
+
+### uniq (Array)
+
+```ruby
+[1,2,3,1,2,3].uniq
+```
+
+Output:
+
+```ruby
+[1,2,3]
+```
+
+### chars (String)
+
+```ruby
+"rahul".chars
+```
+
+Output:
+
+```ruby
+["r","a","h","u","l"]
+```
+
+##  Rails Data Types
+
+### String Types
+
+* string
+* text
+* binary
+
+### Numeric Types
+
+* integer
+* float
+* decimal
+
+### Date & Time Types
+
+* date
+* datetime
+* timestamp
+* time
+
+--- 

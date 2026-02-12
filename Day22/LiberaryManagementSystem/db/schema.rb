@@ -38,7 +38,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_10_094603) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "address_id", null: false
+    t.bigint "address_id"
     t.datetime "created_at", null: false
     t.bigint "purchase_id", null: false
     t.datetime "updated_at", null: false
