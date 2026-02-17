@@ -6,4 +6,4 @@ class Course < ApplicationRecord
   has_many :students, through: :enrollments
 
   has_and_belongs_to_many :tags
-end
+end     

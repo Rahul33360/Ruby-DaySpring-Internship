@@ -1,6 +1,6 @@
 class Offer < ApplicationRecord
-    # Day20
-    has_many :Product1s, through: :product1s_offers , dependent: :destroy
+    # Day20 dependent: :destroy -> removes child record if parent record removed
+    # has_many :Product1s, through: :product1s_offers , dependent: :destroy
 
     # Day22
     #  many to many

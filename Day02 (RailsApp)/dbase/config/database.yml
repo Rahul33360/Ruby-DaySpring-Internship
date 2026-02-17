@@ -27,11 +27,38 @@ default: &default
   password: Rahul
   host: localhost
   pool: 5
+  
 
 
 development:
-  <<: *default
-  database: dbase_development
+  primary:
+    <<: *default
+    database: dbase_development
+
+  # Day 25
+  queue:
+    <<: *default
+    database: ecommerce_development_queue
+
+
+  # <<: *default
+  # database: learning_management_application_development
+
+  # Day 25
+  # primary:
+  #   <<: *default
+  #   database: learning_management_application_development
+
+  # Day 25
+  # secondary:
+  #   <<: *default
+  #   database: sample_database   # this is for adding multiple databases
+  # Day 25
+  # tertiary:
+  #   <<: *default
+  #   database: another_database  # this does not require create model
+  # by multi database feature of rails, does not require new model 
+  
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.

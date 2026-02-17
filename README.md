@@ -18,8 +18,8 @@
 ### now setup the database.yml file by pasting the code ->   
 ##### Inside:   
 #####  default: &default     
-#####  database: postgres     
-#####  username: postgres   (if ur username is postgres)
+#####  database: postgresql     
+#####  username: postgres   #(if ur username is postgres)
 #####  password: YOUR_PASSWORD  
 #####  host: localhost   
 
@@ -2894,6 +2894,10 @@ Output:
 ```ruby
 ["r","a","h","u","l"]
 ```
+### Note: Good Practice to write code in Model is 
+* Top-most/First  -> CONSTANTS
+* Mid/Second      -> Association
+* Last/Third      -> Validation
 
 ##  Rails Data Types
 
@@ -2917,3 +2921,298 @@ Output:
 * time
 
 --- 
+
+
+# Day 25 Active Job
+
+### Why we are using Rails components?
+
+#### Rails components are used to create reusable, encapsulated, and testable building blocks.
+
+They help to:
+
+* Improve maintainability  
+* Separate logic from view code  
+* Build modular and reusable structure  
+* Maintain consistency across application  
+* Help developers build faster and cleaner applications  
+
+Rails components include:
+
+* Active Record  
+* Active Job  
+* Action Mailer  
+* Action Cable  
+* Action Controller  
+* Action View  
+
+### Some concepts of Database
+
+After installing Solid Queue or configuring background jobs, these will be show as in terminal:
+
+```ruby
+identical  config/queue.yml     
+identical  config/recurring.yml   
+identical  db/queue_schema.rb   
+identical  bin/jobs
+identical  config/environments/production.rb   
+```
+
+* identical means the file already exists and Rails does not overwrite it.
+
+
+### Notes & Configuration for Multiple Database
+
+Rails supports multiple databases from Rails version 6 onwards.
+
+We configure multiple databases inside:
+
+```
+config/database.yml
+```
+
+Purpose of multiple databases in same enviroment:
+
+* Use one database for reading data  
+* Use another database for writing data  
+* Improve data security  
+* Improve performance  
+* Improve data integrity  
+
+#### Example configuration
+
+```ruby
+development:
+  primary:
+    <<: *default
+    database: learning_management_application_development
+
+  secondary:
+    <<: *default
+    database: sample_database
+
+  tertiary:
+    <<: *default
+    database: another_database
+```
+
+We can configure multiple databases like above example for using different databases for different purposes in a single environment.
+
+Rails multi database feature does not require creating separate models for each database necessarily.
+
+### Note about SQL Database
+
+Active Record works only with relational databases like:
+
+* PostgreSQL  
+* MySQL  
+* SQLite  
+
+### Note about NoSQL Database
+
+Active Record and Active Model do not work with NoSQL databases like MongoDB.
+
+To work with MongoDB, we need to install this gem:
+
+```ruby
+gem 'mongoid'
+```
+
+Mongoid is an ODM (Object Document Mapper) for MongoDB.
+
+### Action Dispatch
+
+Action Dispatch is responsible for handling routing.
+
+It connects:
+
+Request → Controller → Response
+
+It manages routes and request handling.
+
+### Action Cable
+
+Action Cable is used for real-time communication.
+It uses WebSocket protocol.
+
+Features:
+
+#### 1) WebSocket
+* Allows two-way communication between client and server.
+* Connection can be opened and closed.
+
+#### 2) Channel Creation
+
+Channels help in managing communication.
+
+Example:
+
+* Chat channel  
+* Notification channel  
+
+#### 3) Pub-Sub Architecture
+
+* Publisher sends message  
+* Subscriber receives message  
+* Used for real-time updates.
+
+## Active Job
+
+* Active Job helps manage background tasks.
+* It runs jobs in background instead of blocking the main application.
+
+Used for:
+
+* Sending emails  
+* Data processing  
+* File processing  
+* Background tasks  
+
+#### It improves performance and user experience.
+
+### Default Queue Adapter in Rails 8
+
+Default adapter:
+
+```
+:solid_queue
+```
+
+Solid Queue is the default background job processor in Rails 8.
+
+Check its presence in:
+
+* Gemfile  
+* Gemfile.lock  
+* bin/jobs  
+* config/deploy.yml  
+
+### Why Active Job is used instead of Controller
+
+If logic is placed inside controller:
+
+* It runs synchronously  
+* If failure happens, entire process restarts  
+
+If logic is placed inside Active Job:
+
+* It runs asynchronously  
+* Can retry failed jobs  
+* Does not block main application  
+
+## Installing Solid Queue
+
+### Step 1: Configure queue adapter
+
+Open:
+
+```
+config/application.rb
+```
+
+Add:
+
+```ruby
+config.active_job.queue_adapter = :solid_queue
+```
+
+Alternative adapter:
+
+```ruby
+config.active_job.queue_adapter = :async
+```
+
+### Step 2: Install solid_queue
+
+Run:
+
+```ruby
+rails solid_queue:install
+```
+
+This creates required configuration files.
+
+### Step 3: Write mailer method
+
+Example:
+
+File:
+
+```
+app/mailers/customer_mailer.rb
+```
+
+```ruby
+def review_email(customer1)
+  @customer1 = customer1
+  mail(to: @customer1.email, subject: "Review Email working")
+end
+```
+
+### Step 4: Create a Job
+
+Run:
+
+```ruby
+rails generate job ReviewHandler
+```
+
+This creates file:
+
+```ruby
+app/jobs/review_handler_job.rb
+```
+
+If file already exists, in terminal it will shows:
+
+```ruby
+identical
+```
+
+## External Background Job Servers
+
+Rails Active Job supports external queue adapters.
+
+### 1) Sidekiq
+
+* Requires Redis to work.
+
+* Uses Redis for job queue storage.
+
+Functionality:
+
+* Sending emails  
+* Background processing  
+* File processing  
+* Image processing  
+
+### 2) Redis
+
+* Redis is an in-memory data store.
+
+Used for:
+
+* Caching  
+* Background jobs  
+* Session management  
+
+Redis improves performance.
+
+## Summary
+
+Active Job is used for:
+
+* Background processing  
+* Sending emails  
+* Running long tasks  
+* Improving application performance  
+
+Default adapter in Rails 8 is Solid Queue.
+
+External adapters include:
+
+* Sidekiq  
+* Redis  
+
+---
+

@@ -13,12 +13,12 @@ class OrdersController < ApplicationController
     end
 
     def new
-        @order = Order.new
+        @order = Order.new()
     end
 
     def order_params
         # good practice
-        params.require(:order).permit(:details, :order_count)
+        params.require(:order).permit(:details, :order_count, :product1_id, :customer1_id)
 
         # do not use .expect in params
         # params.expect(:order).permit(:details, :order_count)
@@ -38,8 +38,16 @@ class OrdersController < ApplicationController
 
     def create # for adding the records
         # raise params.inspect
+        # raise order_params.inspect
         @order = Order.create(order_params) # reason for instanced variable is , so that it will be accessiblen to view also 
         # @order.save  # when we use create action we don't 
+        # raise @order.save.inspect
+
+        @order.customer1_id = 13    # this is hard coded not gud practice
+        @order.product1_id = 36     # this is hard coded not gud practice
+        
+        # raise @order.save.inspect
+
         if @order.save
             redirect_to @order, notice: "Order created successfully" # redirect to show id page
             # redirect_to orders_path # for redirecting to index page
