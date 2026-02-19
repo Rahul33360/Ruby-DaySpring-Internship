@@ -3216,3 +3216,1277 @@ External adapters include:
 
 ---
 
+# Day 26 (OOP)
+
+## Initialize (Constructor)
+
+### Definition
+
+Initialize is a special method in Ruby that runs automatically when we create an object of a class.
+
+### Uses
+
+* To set initial values when object is created  
+* Values can be passed as parameters to initialize method  
+
+### Example
+
+```ruby
+class Customer
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+c = Customer.new("Rahul")
+
+puts c.name
+```
+
+### Important Points
+
+* initialize method also gets inherited from parent to child  
+* If parent and child both have initialize method, then to call parent constructor we use `super` in child class  
+
+Example:
+
+```ruby
+class Parent
+  def initialize(name)
+    @name = name
+    puts "Parent initialize called"
+  end
+end
+
+class Child < Parent
+  def initialize(name, age)
+    super(name)
+    @age = age
+    puts "Child initialize called"
+  end
+end
+
+Child.new("Rahul", 22)
+```
+
+## Getter Method (to get the value)
+
+Getter method is used to access instance variable value from outside the class.
+
+### Example
+
+```ruby
+class Customer
+  def initialize(name)
+    @name = name
+  end
+
+  def name
+    @name
+  end
+end
+
+c = Customer.new("Rahul")
+puts c.name
+```
+
+## Setter Method (to set the value)
+
+Setter method is used to modify instance variable value from outside the class.
+
+### Example
+
+```ruby
+class Customer
+  def initialize(name)
+    @name = name
+  end
+
+  def name=(new_name)
+    @name = new_name
+  end
+
+  def name
+    @name
+  end
+end
+
+c = Customer.new("Rahul")
+c.name = "Amit"
+
+puts c.name
+```
+
+When we try to set value from outside of class, we use:
+
+```ruby
+obj_name.name = "aaa"
+```
+
+## attr_reader, attr_writer, attr_accessor
+
+Writing getter and setter manually is lengthy, so Ruby provides helper methods.
+
+### attr_reader
+
+Allows only reading value (getter).
+
+Example:
+
+```ruby
+class Customer
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+c = Customer.new("Rahul")
+puts c.name
+```
+
+### attr_writer
+
+Allows only setting value (setter).
+
+Example:
+
+```ruby
+class Customer
+  attr_writer :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+c = Customer.new("Rahul")
+c.name = "Amit"
+```
+
+### attr_accessor
+
+Allows both getter and setter.
+
+Example:
+
+```ruby
+class Customer
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+c = Customer.new("Rahul")
+
+puts c.name      # getter
+c.name = "Amit"  # setter
+puts c.name
+```
+
+## Inheritance
+
+Inheritance means child class gets properties and methods from parent class.
+
+We use inheritance to reuse code and avoid rewriting same code.
+
+### Single Level Inheritance
+
+Ruby supports single inheritance, meaning a class can inherit from only one parent class.
+
+Example:
+
+```ruby
+class Animal
+end
+
+class Dog < Animal
+end
+```
+
+### Multiple Inheritance
+
+Ruby does not support multiple inheritance.
+
+Example (Not possible):
+
+```ruby
+class A
+end
+
+class B
+end
+
+class C < A, B   # NOT possible in Ruby
+end
+```
+
+### Reason (Diamond Problem)
+
+If two parent classes have same method and child inherits both, Ruby cannot decide which method to call.
+
+Example diagram:
+
+```
+    A
+   / \
+  B   C
+   \ /
+    D
+```
+
+To overcome this problem, Ruby uses Modules.
+
+## Module
+
+Module is a collection of methods that can be shared across classes.
+
+It behaves like a class but is not a class.
+
+### Uses
+
+* To share common methods  
+* To achieve code reuse  
+* To implement multiple behavior sharing  
+
+### Important Points
+
+* Cannot create object of module  
+* Cannot use `.new` keyword  
+
+Example:
+
+```ruby
+module Walk
+  def walk
+    puts "Walking..."
+  end
+end
+```
+
+## Mixins
+
+Mixin is a concept of sharing code across classes using modules.
+
+Module is mechanism, Mixin is concept.
+
+## Include
+
+Include is used to add module methods as instance methods in class.
+
+Used when method should work on object.
+
+It places module after class but before parent class in ancestor lookup chain.
+
+Example:
+
+```ruby
+module Greetable
+  def greet
+    "Hello from Greetable"
+  end
+end
+
+class Person
+  include Greetable
+end
+
+p = Person.new
+puts p.greet
+```
+
+## Prepend
+
+Prepend is used to add module methods before class in ancestor chain.
+
+Module method gets higher priority than class method.
+
+Example:
+
+```ruby
+module Greetable
+  def greet
+    "Hello from Greetable"
+  end
+end
+
+module Polite
+  def greet
+    "Good day from Polite"
+  end
+end
+
+class Employee
+  include Greetable
+  prepend Polite
+end
+
+e = Employee.new
+puts e.greet
+```
+
+Output:
+
+```
+Good day from Polite
+```
+
+Because prepend module gets higher priority.
+
+## Important Note about Multiple Modules
+
+If two modules are included and both have same method name, the last included module gets priority.
+
+Example:
+
+```ruby
+module A
+  def test
+    puts "Module A"
+  end
+end
+
+module B
+  def test
+    puts "Module B"
+  end
+end
+
+class Example
+  include A
+  include B
+end
+
+Example.new.test
+```
+
+Output:
+
+```
+Module B
+```
+
+Because last included module gets priority.
+
+
+## Testing ancestor lookup, include and prepend
+
+### Check ancestors chain
+
+```ruby
+p Person.ancestors
+# => [Person, Greetable, Object, Kernel, BasicObject]
+
+p Employee.ancestors
+# => [Polite, Employee, Greetable, Object, Kernel, BasicObject]
+```
+
+Explanation:
+
+* include → places module after class in ancestor chain  
+* prepend → places module before class in ancestor chain  
+
+So prepend module gets higher priority than class and include modules.
+
+### Testing method execution
+
+```ruby
+person = Person.new
+puts person.greet
+# => "Hello from Greetable"
+
+employee = Employee.new
+puts employee.greet
+# => "Good day from Polite"
+```
+
+Explanation:
+
+Polite module overrides greet method because prepend gives higher priority.
+
+## Prepend
+
+### Definition
+
+Prepend adds module methods to class and makes them available to access via object, but overrides existing class methods.
+
+Ancestor lookup:
+
+Places module before current class in ancestor chain.
+
+### Example
+
+```ruby
+module Logging
+  def perform
+    puts "Logging before action"
+    super
+  end
+end
+
+class Task
+  def perform
+    puts "Performing task"
+  end
+end
+
+class LoggedTask < Task
+  prepend Logging
+end
+```
+
+### Check ancestor chain
+
+```ruby
+p LoggedTask.ancestors
+# => [Logging, LoggedTask, Task, Object, Kernel, BasicObject]
+```
+
+### Call method
+
+```ruby
+task = LoggedTask.new
+task.perform
+```
+
+Output:
+
+```
+Logging before action
+Performing task
+```
+
+Explanation:
+
+Logging module executes first because prepend places it before class.
+
+## Extend
+
+### Definition
+
+Extend adds module methods as class methods.
+
+Used when method should work on class instead of object.
+
+### Example
+
+```ruby
+module Greetable
+  def greet
+    "Hello!"
+  end
+end
+
+class Person
+  extend Greetable
+end
+```
+
+### Call class method
+
+```ruby
+puts Person.greet
+# => "Hello!"
+```
+
+### Check ancestors
+
+```ruby
+p Person.ancestors
+# => [Person, Object, Kernel, BasicObject]
+```
+
+Note:
+
+Extend does not affect instance methods.
+
+## Encapsulation
+
+### Definition
+
+Encapsulation means hiding internal data and allowing access using methods.
+
+Achieved by:
+
+* hiding variables  
+* controlled access using getter/setter  
+* preventing direct access  
+
+### Example
+
+```ruby
+class BankAccount
+  def balance=(amount)
+    if amount >= 0
+      @balance = amount
+    end
+  end
+
+  def balance
+    @balance
+  end
+end
+```
+
+Explanation:
+
+Balance cannot be set directly without validation.
+
+## Abstraction
+
+### Definition
+
+Abstraction means hiding internal complexity and showing only necessary functionality.
+
+### Example in Rails
+
+```ruby
+customer.save
+```
+
+We just call save method.
+
+Internally Rails performs:
+
+* SQL query execution  
+* Database connection  
+* Data validation  
+* Data persistence  
+
+All internal complexity is hidden.
+
+## Ways to write class methods
+
+### Method 1: Using self
+
+```ruby
+class Customer
+  def self.info
+    puts "Customer class method"
+  end
+end
+
+Customer.info
+```
+
+### Method 2: Using class name
+
+```ruby
+class Customer
+  def Customer.info
+    puts "Customer class method"
+  end
+end
+
+Customer.info
+```
+
+### Method 3: Using class << self
+
+```ruby
+class Customer
+  class << self
+    def info
+      puts "Customer info"
+    end
+
+    def show
+      puts "Show"
+    end
+  end
+end
+
+Customer.info
+Customer.show
+```
+
+## Duck Typing
+
+### Definition
+
+Ruby does not care about object type.
+
+Ruby cares about behavior (method presence), not class type.
+
+Type is decided at runtime.
+
+Example:
+
+```ruby
+def make_speak(animal)
+  animal.speak
+end
+```
+
+Any object with speak method will work.
+
+## Method Overriding
+
+### Definition
+
+Child class overrides parent class method.
+
+Example:
+
+```ruby
+class Animal
+  def speak
+    puts "Animal sound"
+  end
+end
+
+class Dog < Animal
+  def speak
+    puts "Bark"
+  end
+end
+```
+
+Dog overrides parent method.
+
+## Method Overloading
+
+Ruby does not support true method overloading.
+
+It can be simulated using default arguments.
+
+## Polymorphism
+
+### Definition
+
+Polymorphism means same method behaves differently for different objects.
+
+One method → many forms.
+
+### Example
+
+```ruby
+class Dog
+  def speak
+    puts "Bark"
+  end
+end
+
+class Cat
+  def speak
+    puts "Meow"
+  end
+end
+
+def make_speak(animal)
+  animal.speak
+end
+
+make_speak(Dog.new)
+make_speak(Cat.new)
+```
+
+Output:
+
+```
+Bark
+Meow
+```
+
+## Concerns
+
+Concerns are used for repetitive logic.
+
+Used to store reusable code.
+
+Locations:
+
+For models:
+
+```
+app/models/concerns
+```
+
+For controllers:
+
+```
+app/controllers/concerns
+```
+
+## Helpers
+
+Helpers are modules used to write reusable logic for views.
+
+Logic written in:
+
+```
+app/helpers
+```
+
+Used in:
+
+```
+app/views
+```
+
+### Example
+
+```ruby
+module ApplicationHelper
+  def format_price(price)
+    "$#{price}"
+  end
+end
+```
+
+Use in view:
+
+```erb
+<%= format_price(100) %>
+```
+
+## Partials
+
+Partials are reusable view files.
+
+Used to avoid duplicate HTML code.
+
+File name starts with underscore (_)
+
+Example file:
+
+```
+app/views/products/_product.html.erb
+```
+
+Example content:
+
+```erb
+<p><%= product.name %></p>
+```
+
+Use in view:
+
+```erb
+<%= render partial: "product", locals: { product: @product } %>
+```
+
+---  
+
+# Day 27
+
+## Meta-programming
+
+### Definition
+
+Meta-programming means writing code that can create or modify other code dynamically at runtime.
+
+In other words, Ruby has the ability to create methods automatically at runtime instead of writing them manually.
+
+Ruby uses Meta-programming to follow DRY principle (Don't Repeat Yourself).
+
+## Ways to achieve Meta-programming
+
+### 1) define_method()
+
+#### Definition
+
+define_method is used to create methods dynamically at runtime.
+
+Syntax:
+
+```ruby
+define_method("method_name") do
+  # logic
+end
+```
+
+#### Without define_method (manual way)
+
+Example:
+
+```ruby
+class User
+  attr_accessor :role
+
+  def admin?
+    role == "admin"
+  end
+
+  def guest?
+    role == "guest"
+  end
+
+  def members?
+    role == "members"
+  end
+end
+```
+
+#### Problem
+
+Repetitive code.
+
+Not following DRY principle.
+
+#### With define_method (DRY principle)
+
+Example:
+
+```ruby
+class User
+  
+  attr_accessor :role  
+
+  arr = ["admin", "member", "guest"]
+  
+  arr.each do |role_name|
+    define_method("#{role_name}?") do
+      role == role_name
+    end    
+  end
+  
+end
+
+obj = User.new
+obj.role = "guest"
+
+puts obj.admin?
+puts obj.member?
+puts obj.guest?
+# puts obj.unknown_method?  # will raise error
+```
+
+Output:
+
+```
+false
+false
+true
+```
+
+#### When we use define_method?
+
+When we have repetitive methods with similar logic.
+
+Example:
+
+admin?, guest?, member? all follow same logic.
+
+define_method avoids writing duplicate code.
+
+### 2) method_missing
+
+#### Definition
+
+Ruby automatically calls method_missing when user calls a method which is not present in the class.
+
+It is used to handle unknown methods dynamically.
+
+#### Why it is important?
+
+When user calls unknown method, instead of throwing error, Ruby allows us to handle it dynamically using method_missing.
+
+#### Example 1
+
+```ruby
+class Test
+  def method_missing(name)
+    puts "#{name} method not found"
+  end
+end
+
+Test.new.hello
+```
+
+Output:
+
+```
+hello method not found
+```
+
+#### Example 2 (Global handling using Object class)
+
+```ruby
+class Object
+  def method_missing(name, *args)
+    puts "#{name} is missing"
+  end
+end
+
+Object.new.hello
+```
+
+Output:
+
+```
+hello is missing
+```
+
+This works globally because all classes inherit from Object class.
+
+#### Example 3 (Handle specific type of methods dynamically)
+
+```ruby
+class Vendor
+  
+  def method_missing(method_name, *args)
+    
+    if method_name.to_s.start_with?("find_by_")
+
+      substrValue = method_name.to_s.sub("find_by_", "")
+
+      puts substrValue
+
+      puts "find_by_#{substrValue} : #{args.first}"
+
+    else
+      super
+    end
+
+  end
+
+end
+
+obj = Vendor.new
+obj.find_by_name("rahul")
+```
+
+Output:
+
+```
+name
+find_by_name : rahul
+```
+
+Explanation:
+
+find_by_name method does not exist, but method_missing handles it dynamically.
+
+#### Important Note
+
+We can write method_missing in Object class to handle missing methods globally.
+
+This is possible because of Open-class concept.
+
+## Features of Meta-programming
+
+### 1) Open-class
+
+#### Definition
+
+Open-class means opening and modifying existing class behavior in Ruby.
+
+Ruby allows modifying built-in classes like:
+
+```
+String
+Array
+Integer
+Object
+```
+
+This is possible because Ruby is dynamic and decides methods at runtime.
+
+In Java/C++, classes cannot be modified after creation.
+
+#### Example
+
+```ruby
+class String
+  def upcase
+    puts "Modified behaviour"
+  end
+end
+
+"Rahul".upcase
+```
+
+Output:
+
+```
+Modified behaviour
+```
+
+#### Benefits
+
+* Developer can add new methods  
+* Can modify existing behavior  
+* Can extend built-in classes  
+
+#### Monkey patching example (Rails methods)
+
+Rails added methods like:
+
+```
+present?
+blank?
+```
+
+These methods are added using Open-class concept.
+
+These methods are not originally present in pure Ruby.
+
+#### Using Open-class in Rails application
+
+If we need global methods in Rails application:
+
+Create file:
+
+```
+lib/my_global_method.rb
+```
+
+Then load it in:
+
+```
+config/application.rb
+```
+
+#### Why load in application.rb?
+Because application.rb is loaded first when Rails application starts.
+So open-class modifications become available globally in entire application.
+
+## Ways to achieve Meta-programming
+
+### 3) Introspection
+
+#### Definition
+
+Introspection means examining objects at runtime and getting information about them.
+
+It gives information like:
+
+* What class object belongs to  
+* What methods object has  
+* What instance variables object contains  
+
+#### i) .class
+
+Used to get object type.
+
+Example:
+
+```ruby
+name = "rahul"
+puts name.class
+```
+
+Output:
+
+```
+String
+```
+
+#### ii) .methods
+
+Shows all methods available for that object.
+
+Example:
+
+```ruby
+num = 5
+p num.methods
+```
+
+Output (partial):
+
+```
+[:remainder, :abs, :magnitude, :zero?, :floor, :ceil, :round, etc]
+```
+
+#### iii) .inspect
+
+Shows object details in readable format.
+
+Mainly used for debugging.
+
+Example:
+
+```ruby
+name = "Rahul"
+puts name.inspect
+```
+
+Output:
+
+```
+"Rahul"
+```
+
+Used frequently in Rails debugging.
+
+#### iv) .instance_variables
+
+Shows all instance variables present inside object.
+
+Especially useful to check variables created in initialize method.
+
+Example:
+
+```ruby
+class User
+  def initialize
+    @name = "Rahul"
+    @age = 22
+  end
+end
+
+u = User.new
+p u.instance_variables
+```
+
+Output:
+
+```
+[:@name, :@age]
+```
+
+#### v) .respond_to?
+
+Checks whether method exists for that object or not.
+
+Method name should be passed as symbol.
+
+Example:
+
+```ruby
+name = "Rahul"
+puts name.respond_to?(:upcase)
+```
+
+Output:
+
+```
+true
+```
+
+#### Why introspection is used?
+
+* Debugging  
+* Checking object capabilities  
+* Dynamic method handling  
+* Runtime analysis  
+
+### 4) Evaluation
+
+Evaluation means executing code dynamically at runtime.
+
+Ruby provides methods like:
+
+* class_eval  
+* instance_eval  
+
+#### i) class_eval
+
+Definition:
+
+class_eval is used to add instance methods dynamically to a class.
+
+These methods can be accessed using object.
+
+Called class_eval because code is inserted inside class.
+
+#### Example
+
+```ruby
+class User
+end
+
+User.class_eval do
+  def greet
+    puts "method inserted in class_eval"
+  end
+end
+
+u = User.new
+u.greet
+```
+
+Output:
+
+```
+method inserted in class_eval
+```
+
+Explanation:
+
+greet method was not originally present in User class.
+
+class_eval added it dynamically.
+
+#### ii) instance_eval
+
+Definition:
+
+instance_eval is used to add methods to a specific object or to class itself as class method.
+
+These methods are accessed using class name.
+
+#### Example
+
+```ruby
+class User
+end
+
+User.instance_eval do
+  def greet
+    puts "method instance_eval"
+  end
+end
+
+User.greet
+```
+
+Output:
+
+```
+method instance_eval
+```
+
+Explanation:
+
+instance_eval adds method as class method.
+
+#### Difference between class_eval and instance_eval
+
+| Feature | class_eval | instance_eval |
+|--------|-------------|----------------|
+| Adds method type | Instance method | Class method |
+| Called using | Object | Class |
+| Scope | Class | Specific object or class |
+
+#### Important Note (Rails usage)
+Rails internally uses class_eval for creating dynamic methods like:
+
+```
+validates
+has_many
+belongs_to
+has_one
+```
+
+These methods are created dynamically using Meta-programming.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

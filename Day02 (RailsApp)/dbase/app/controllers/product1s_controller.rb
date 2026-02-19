@@ -24,6 +24,10 @@ class Product1sController < ApplicationController
     @product1 = Product1.new
   end
 
+  # Day29
+  def analytics
+  end
+
   # GET /product1s/1/edit
   def edit
   end

@@ -76,18 +76,19 @@ end
 
 
 class NewMethodTypes < MethodTypes 
-    prepend ModuleMethod1, ModuleMethod2
+    # prepend ModuleMethod1, ModuleMethod2
     # include ModuleMethod1, ModuleMethod2
+    extend ModuleMethod1, ModuleMethod2
 
-    def self.method
-        puts "new class method"
-    end
-    def instanceMethod
-        puts "new instance method"
-    end
-    def newAddedMethod
-        puts "newAddedmethod called"
-    end
+    # def self.method
+    #     puts "new class method"
+    # end
+    # def instanceMethod
+    #     puts "new instance method"
+    # end
+    # def newAddedMethod
+    #     puts "newAddedmethod called"
+    # end
 end
 
 
@@ -97,8 +98,22 @@ end
 
 obj2 = NewMethodTypes.new
 
+
 # obj2.defmoduleMethod1
 # obj2.defmoduleMethod2
 # obj2.ModuleMethodSelf1
+# print "With prepend \n"
+# puts NewMethodTypes.ancestors
 
-puts NewMethodTypes.ancestors
+# puts NewMethodTypes.singleton_class.ancestors # for extend lookup
+
+# ----------
+
+class A
+end
+
+class B < A
+end
+
+
+# puts B.ancestors
