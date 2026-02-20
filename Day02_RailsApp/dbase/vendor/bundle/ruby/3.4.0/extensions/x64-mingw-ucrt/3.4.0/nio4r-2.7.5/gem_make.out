@@ -1,0 +1,18 @@
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.5/ext/nio4r
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.5/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20260220-6628-tua4l9 sitelibdir\=./.gem.20260220-6628-tua4l9 clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.5/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20260220-6628-tua4l9 sitelibdir\=./.gem.20260220-6628-tua4l9
+make: Nothing to be done for 'all'.
+
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.5/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20260220-6628-tua4l9 sitelibdir\=./.gem.20260220-6628-tua4l9 install
+make: Nothing to be done for 'install'.
+
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.5/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20260220-6628-tua4l9 sitelibdir\=./.gem.20260220-6628-tua4l9 clean
+make: *** No rule to make target 'clean'.  Stop.

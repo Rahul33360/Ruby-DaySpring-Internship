@@ -1,0 +1,16 @@
+builddir="`pwd`"; cd libcharset && make all && make install-lib libdir="$builddir/lib" includedir="$builddir/lib"
+make[1]: Entering directory '/c/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/libiconv-1.18/libcharset'
+cd lib && make all
+make[2]: Entering directory '/c/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/libiconv-1.18/libcharset/lib'
+/bin/sh ../libtool --mode=compile gcc -I. -I. -I.. -I./.. -I../include -O2 -g -fPIC  -Wall -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./localcharset.c
+libtool: compile:  gcc -I. -I. -I.. -I./.. -I../include -O2 -g -fPIC -Wall -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./localcharset.c -o localcharset.o
+/bin/sh ../libtool --mode=compile gcc -I. -I. -I.. -I./.. -I../include -O2 -g -fPIC  -Wall -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./relocatable-stub.c
+libtool: compile:  gcc -I. -I. -I.. -I./.. -I../include -O2 -g -fPIC -Wall -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./relocatable-stub.c -o relocatable-stub.o
+/bin/sh ../libtool --mode=link gcc  -O2 -g -fPIC  -o libcharset.la -rpath C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ports/x64-mingw-ucrt/libiconv/1.18/lib -version-info 1:0:0 -no-undefined localcharset.lo relocatable-stub.lo
+/bin/sh: -c: line 1: syntax error near unexpected token `('
+/bin/sh: -c: line 1: `/bin/sh ../libtool --mode=link gcc  -O2 -g -fPIC  -o libcharset.la -rpath C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ports/x64-mingw-ucrt/libiconv/1.18/lib -version-info 1:0:0 -no-undefined localcharset.lo relocatable-stub.lo'
+make[2]: *** [Makefile:55: libcharset.la] Error 2
+make[2]: Leaving directory '/c/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/libiconv-1.18/libcharset/lib'
+make[1]: *** [Makefile:34: all] Error 2
+make[1]: Leaving directory '/c/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/libiconv-1.18/libcharset'
+make: *** [Makefile:41: lib/localcharset.h] Error 2

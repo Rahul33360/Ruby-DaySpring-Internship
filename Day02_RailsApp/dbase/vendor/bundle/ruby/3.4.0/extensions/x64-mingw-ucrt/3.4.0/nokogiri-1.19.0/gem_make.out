@@ -1,0 +1,614 @@
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+checking for whether -std=c99 is accepted as CFLAGS... yes
+checking for whether -Wno-declaration-after-statement is accepted as CFLAGS... yes
+checking for whether -O2 is accepted as CFLAGS... yes
+checking for whether -g is accepted as CFLAGS... yes
+checking for whether -Winline is accepted as CFLAGS... yes
+checking for whether -Wmissing-noreturn is accepted as CFLAGS... yes
+checking for whether -Wconversion is accepted as CFLAGS... yes
+checking for whether  "-Idummypath" is accepted as CPPFLAGS... yes
+Building nokogiri using packaged libraries.
+Static linking is enabled.
+Cross build is disabled.
+Using mini_portile version 2.8.9
+---------- IMPORTANT NOTICE ----------
+Building Nokogiri with a packaged version of zlib-1.3.1.
+Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02\ \(RailsApp\)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ports/x64-mingw-ucrt/zlib/1.3.1/lib --disable-shared --enable-static CFLAGS\=-fPIC
+
+The Nokogiri maintainers intend to provide timely security updates, but if
+this is a concern for you and want to use your OS/distro system library
+instead, then abort this installation process and install nokogiri as
+instructed at:
+
+  https://nokogiri.org/tutorials/installing_nokogiri.html#installing-using-standard-system-libraries
+
+
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  0%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  1%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  2%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  3%) 
+Downloading zlib-1.3.1.tar.gz (  4%) 
+Downloading zlib-1.3.1.tar.gz (  4%) 
+Downloading zlib-1.3.1.tar.gz (  5%) 
+Downloading zlib-1.3.1.tar.gz (  6%) 
+Downloading zlib-1.3.1.tar.gz (  7%) 
+Downloading zlib-1.3.1.tar.gz (  8%) 
+Downloading zlib-1.3.1.tar.gz (  9%) 
+Downloading zlib-1.3.1.tar.gz ( 10%) 
+Downloading zlib-1.3.1.tar.gz ( 11%) 
+Downloading zlib-1.3.1.tar.gz ( 12%) 
+Downloading zlib-1.3.1.tar.gz ( 13%) 
+Downloading zlib-1.3.1.tar.gz ( 14%) 
+Downloading zlib-1.3.1.tar.gz ( 15%) 
+Downloading zlib-1.3.1.tar.gz ( 17%) 
+Downloading zlib-1.3.1.tar.gz ( 18%) 
+Downloading zlib-1.3.1.tar.gz ( 19%) 
+Downloading zlib-1.3.1.tar.gz ( 20%) 
+Downloading zlib-1.3.1.tar.gz ( 21%) 
+Downloading zlib-1.3.1.tar.gz ( 22%) 
+Downloading zlib-1.3.1.tar.gz ( 23%) 
+Downloading zlib-1.3.1.tar.gz ( 24%) 
+Downloading zlib-1.3.1.tar.gz ( 25%) 
+Downloading zlib-1.3.1.tar.gz ( 26%) 
+Downloading zlib-1.3.1.tar.gz ( 27%) 
+Downloading zlib-1.3.1.tar.gz ( 28%) 
+Downloading zlib-1.3.1.tar.gz ( 30%) 
+Downloading zlib-1.3.1.tar.gz ( 31%) 
+Downloading zlib-1.3.1.tar.gz ( 32%) 
+Downloading zlib-1.3.1.tar.gz ( 33%) 
+Downloading zlib-1.3.1.tar.gz ( 34%) 
+Downloading zlib-1.3.1.tar.gz ( 35%) 
+Downloading zlib-1.3.1.tar.gz ( 36%) 
+Downloading zlib-1.3.1.tar.gz ( 37%) 
+Downloading zlib-1.3.1.tar.gz ( 38%) 
+Downloading zlib-1.3.1.tar.gz ( 39%) 
+Downloading zlib-1.3.1.tar.gz ( 40%) 
+Downloading zlib-1.3.1.tar.gz ( 41%) 
+Downloading zlib-1.3.1.tar.gz ( 43%) 
+Downloading zlib-1.3.1.tar.gz ( 44%) 
+Downloading zlib-1.3.1.tar.gz ( 45%) 
+Downloading zlib-1.3.1.tar.gz ( 46%) 
+Downloading zlib-1.3.1.tar.gz ( 47%) 
+Downloading zlib-1.3.1.tar.gz ( 48%) 
+Downloading zlib-1.3.1.tar.gz ( 49%) 
+Downloading zlib-1.3.1.tar.gz ( 50%) 
+Downloading zlib-1.3.1.tar.gz ( 51%) 
+Downloading zlib-1.3.1.tar.gz ( 52%) 
+Downloading zlib-1.3.1.tar.gz ( 53%) 
+Downloading zlib-1.3.1.tar.gz ( 54%) 
+Downloading zlib-1.3.1.tar.gz ( 56%) 
+Downloading zlib-1.3.1.tar.gz ( 57%) 
+Downloading zlib-1.3.1.tar.gz ( 58%) 
+Downloading zlib-1.3.1.tar.gz ( 59%) 
+Downloading zlib-1.3.1.tar.gz ( 60%) 
+Downloading zlib-1.3.1.tar.gz ( 61%) 
+Downloading zlib-1.3.1.tar.gz ( 62%) 
+Downloading zlib-1.3.1.tar.gz ( 63%) 
+Downloading zlib-1.3.1.tar.gz ( 64%) 
+Downloading zlib-1.3.1.tar.gz ( 65%) 
+Downloading zlib-1.3.1.tar.gz ( 66%) 
+Downloading zlib-1.3.1.tar.gz ( 67%) 
+Downloading zlib-1.3.1.tar.gz ( 69%) 
+Downloading zlib-1.3.1.tar.gz ( 70%) 
+Downloading zlib-1.3.1.tar.gz ( 71%) 
+Downloading zlib-1.3.1.tar.gz ( 72%) 
+Downloading zlib-1.3.1.tar.gz ( 73%) 
+Downloading zlib-1.3.1.tar.gz ( 74%) 
+Downloading zlib-1.3.1.tar.gz ( 75%) 
+Downloading zlib-1.3.1.tar.gz ( 76%) 
+Downloading zlib-1.3.1.tar.gz ( 77%) 
+Downloading zlib-1.3.1.tar.gz ( 78%) 
+Downloading zlib-1.3.1.tar.gz ( 79%) 
+Downloading zlib-1.3.1.tar.gz ( 80%) 
+Downloading zlib-1.3.1.tar.gz ( 82%) 
+Downloading zlib-1.3.1.tar.gz ( 83%) 
+Downloading zlib-1.3.1.tar.gz ( 84%) 
+Downloading zlib-1.3.1.tar.gz ( 85%) 
+Downloading zlib-1.3.1.tar.gz ( 86%) 
+Downloading zlib-1.3.1.tar.gz ( 87%) 
+Downloading zlib-1.3.1.tar.gz ( 88%) 
+Downloading zlib-1.3.1.tar.gz ( 89%) 
+Downloading zlib-1.3.1.tar.gz ( 90%) 
+Downloading zlib-1.3.1.tar.gz ( 91%) 
+Downloading zlib-1.3.1.tar.gz ( 92%) 
+Downloading zlib-1.3.1.tar.gz ( 93%) 
+Downloading zlib-1.3.1.tar.gz ( 95%) 
+Downloading zlib-1.3.1.tar.gz ( 96%) 
+Downloading zlib-1.3.1.tar.gz ( 97%) 
+Downloading zlib-1.3.1.tar.gz ( 98%) 
+Downloading zlib-1.3.1.tar.gz ( 99%) 
+Downloading zlib-1.3.1.tar.gz (100%) 
+Extracting zlib-1.3.1.tar.gz into tmp/x86_64-w64-mingw32/ports/zlib/1.3.1... OK
+Running 'compile' for zlib 1.3.1... OK
+Running 'install' for zlib 1.3.1... OK
+Activating zlib 1.3.1 (from C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ports/x64-mingw-ucrt/zlib/1.3.1)...
+Using mini_portile version 2.8.9
+---------- IMPORTANT NOTICE ----------
+Building Nokogiri with a packaged version of libiconv-1.18.
+Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02\ \(RailsApp\)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ports/x64-mingw-ucrt/libiconv/1.18/lib --disable-dependency-tracking --disable-shared --enable-static CPPFLAGS\=-Wall CFLAGS\=-O2\ -g\ -fPIC CXXFLAGS\=-O2\ -g LDFLAGS\=
+
+The Nokogiri maintainers intend to provide timely security updates, but if
+this is a concern for you and want to use your OS/distro system library
+instead, then abort this installation process and install nokogiri as
+instructed at:
+
+  https://nokogiri.org/tutorials/installing_nokogiri.html#installing-using-standard-system-libraries
+
+
+Downloading libiconv-1.18.tar.gz (  0%) 
+Downloading libiconv-1.18.tar.gz (  0%) 
+Downloading libiconv-1.18.tar.gz (  0%) 
+Downloading libiconv-1.18.tar.gz (  1%) 
+Downloading libiconv-1.18.tar.gz (  1%) 
+Downloading libiconv-1.18.tar.gz (  1%) 
+Downloading libiconv-1.18.tar.gz (  1%) 
+Downloading libiconv-1.18.tar.gz (  2%) 
+Downloading libiconv-1.18.tar.gz (  2%) 
+Downloading libiconv-1.18.tar.gz (  2%) 
+Downloading libiconv-1.18.tar.gz (  3%) 
+Downloading libiconv-1.18.tar.gz (  3%) 
+Downloading libiconv-1.18.tar.gz (  3%) 
+Downloading libiconv-1.18.tar.gz (  3%) 
+Downloading libiconv-1.18.tar.gz (  4%) 
+Downloading libiconv-1.18.tar.gz (  4%) 
+Downloading libiconv-1.18.tar.gz (  4%) 
+Downloading libiconv-1.18.tar.gz (  5%) 
+Downloading libiconv-1.18.tar.gz (  5%) 
+Downloading libiconv-1.18.tar.gz (  5%) 
+Downloading libiconv-1.18.tar.gz (  5%) 
+Downloading libiconv-1.18.tar.gz (  6%) 
+Downloading libiconv-1.18.tar.gz (  6%) 
+Downloading libiconv-1.18.tar.gz (  6%) 
+Downloading libiconv-1.18.tar.gz (  7%) 
+Downloading libiconv-1.18.tar.gz (  7%) 
+Downloading libiconv-1.18.tar.gz (  7%) 
+Downloading libiconv-1.18.tar.gz (  7%) 
+Downloading libiconv-1.18.tar.gz (  8%) 
+Downloading libiconv-1.18.tar.gz (  8%) 
+Downloading libiconv-1.18.tar.gz (  8%) 
+Downloading libiconv-1.18.tar.gz (  8%) 
+Downloading libiconv-1.18.tar.gz (  9%) 
+Downloading libiconv-1.18.tar.gz (  9%) 
+Downloading libiconv-1.18.tar.gz (  9%) 
+Downloading libiconv-1.18.tar.gz ( 10%) 
+Downloading libiconv-1.18.tar.gz ( 10%) 
+Downloading libiconv-1.18.tar.gz ( 10%) 
+Downloading libiconv-1.18.tar.gz ( 10%) 
+Downloading libiconv-1.18.tar.gz ( 11%) 
+Downloading libiconv-1.18.tar.gz ( 11%) 
+Downloading libiconv-1.18.tar.gz ( 11%) 
+Downloading libiconv-1.18.tar.gz ( 12%) 
+Downloading libiconv-1.18.tar.gz ( 12%) 
+Downloading libiconv-1.18.tar.gz ( 12%) 
+Downloading libiconv-1.18.tar.gz ( 12%) 
+Downloading libiconv-1.18.tar.gz ( 13%) 
+Downloading libiconv-1.18.tar.gz ( 13%) 
+Downloading libiconv-1.18.tar.gz ( 13%) 
+Downloading libiconv-1.18.tar.gz ( 14%) 
+Downloading libiconv-1.18.tar.gz ( 14%) 
+Downloading libiconv-1.18.tar.gz ( 14%) 
+Downloading libiconv-1.18.tar.gz ( 14%) 
+Downloading libiconv-1.18.tar.gz ( 15%) 
+Downloading libiconv-1.18.tar.gz ( 15%) 
+Downloading libiconv-1.18.tar.gz ( 15%) 
+Downloading libiconv-1.18.tar.gz ( 16%) 
+Downloading libiconv-1.18.tar.gz ( 16%) 
+Downloading libiconv-1.18.tar.gz ( 16%) 
+Downloading libiconv-1.18.tar.gz ( 16%) 
+Downloading libiconv-1.18.tar.gz ( 17%) 
+Downloading libiconv-1.18.tar.gz ( 17%) 
+Downloading libiconv-1.18.tar.gz ( 17%) 
+Downloading libiconv-1.18.tar.gz ( 18%) 
+Downloading libiconv-1.18.tar.gz ( 18%) 
+Downloading libiconv-1.18.tar.gz ( 18%) 
+Downloading libiconv-1.18.tar.gz ( 18%) 
+Downloading libiconv-1.18.tar.gz ( 19%) 
+Downloading libiconv-1.18.tar.gz ( 19%) 
+Downloading libiconv-1.18.tar.gz ( 19%) 
+Downloading libiconv-1.18.tar.gz ( 19%) 
+Downloading libiconv-1.18.tar.gz ( 20%) 
+Downloading libiconv-1.18.tar.gz ( 20%) 
+Downloading libiconv-1.18.tar.gz ( 20%) 
+Downloading libiconv-1.18.tar.gz ( 21%) 
+Downloading libiconv-1.18.tar.gz ( 21%) 
+Downloading libiconv-1.18.tar.gz ( 21%) 
+Downloading libiconv-1.18.tar.gz ( 21%) 
+Downloading libiconv-1.18.tar.gz ( 22%) 
+Downloading libiconv-1.18.tar.gz ( 22%) 
+Downloading libiconv-1.18.tar.gz ( 22%) 
+Downloading libiconv-1.18.tar.gz ( 23%) 
+Downloading libiconv-1.18.tar.gz ( 23%) 
+Downloading libiconv-1.18.tar.gz ( 23%) 
+Downloading libiconv-1.18.tar.gz ( 23%) 
+Downloading libiconv-1.18.tar.gz ( 24%) 
+Downloading libiconv-1.18.tar.gz ( 24%) 
+Downloading libiconv-1.18.tar.gz ( 24%) 
+Downloading libiconv-1.18.tar.gz ( 25%) 
+Downloading libiconv-1.18.tar.gz ( 25%) 
+Downloading libiconv-1.18.tar.gz ( 25%) 
+Downloading libiconv-1.18.tar.gz ( 25%) 
+Downloading libiconv-1.18.tar.gz ( 26%) 
+Downloading libiconv-1.18.tar.gz ( 26%) 
+Downloading libiconv-1.18.tar.gz ( 26%) 
+Downloading libiconv-1.18.tar.gz ( 27%) 
+Downloading libiconv-1.18.tar.gz ( 27%) 
+Downloading libiconv-1.18.tar.gz ( 27%) 
+Downloading libiconv-1.18.tar.gz ( 27%) 
+Downloading libiconv-1.18.tar.gz ( 28%) 
+Downloading libiconv-1.18.tar.gz ( 28%) 
+Downloading libiconv-1.18.tar.gz ( 28%) 
+Downloading libiconv-1.18.tar.gz ( 28%) 
+Downloading libiconv-1.18.tar.gz ( 29%) 
+Downloading libiconv-1.18.tar.gz ( 29%) 
+Downloading libiconv-1.18.tar.gz ( 29%) 
+Downloading libiconv-1.18.tar.gz ( 30%) 
+Downloading libiconv-1.18.tar.gz ( 30%) 
+Downloading libiconv-1.18.tar.gz ( 30%) 
+Downloading libiconv-1.18.tar.gz ( 30%) 
+Downloading libiconv-1.18.tar.gz ( 31%) 
+Downloading libiconv-1.18.tar.gz ( 31%) 
+Downloading libiconv-1.18.tar.gz ( 31%) 
+Downloading libiconv-1.18.tar.gz ( 32%) 
+Downloading libiconv-1.18.tar.gz ( 32%) 
+Downloading libiconv-1.18.tar.gz ( 32%) 
+Downloading libiconv-1.18.tar.gz ( 32%) 
+Downloading libiconv-1.18.tar.gz ( 33%) 
+Downloading libiconv-1.18.tar.gz ( 33%) 
+Downloading libiconv-1.18.tar.gz ( 33%) 
+Downloading libiconv-1.18.tar.gz ( 34%) 
+Downloading libiconv-1.18.tar.gz ( 34%) 
+Downloading libiconv-1.18.tar.gz ( 34%) 
+Downloading libiconv-1.18.tar.gz ( 34%) 
+Downloading libiconv-1.18.tar.gz ( 35%) 
+Downloading libiconv-1.18.tar.gz ( 35%) 
+Downloading libiconv-1.18.tar.gz ( 35%) 
+Downloading libiconv-1.18.tar.gz ( 36%) 
+Downloading libiconv-1.18.tar.gz ( 36%) 
+Downloading libiconv-1.18.tar.gz ( 36%) 
+Downloading libiconv-1.18.tar.gz ( 36%) 
+Downloading libiconv-1.18.tar.gz ( 37%) 
+Downloading libiconv-1.18.tar.gz ( 37%) 
+Downloading libiconv-1.18.tar.gz ( 37%) 
+Downloading libiconv-1.18.tar.gz ( 37%) 
+Downloading libiconv-1.18.tar.gz ( 38%) 
+Downloading libiconv-1.18.tar.gz ( 38%) 
+Downloading libiconv-1.18.tar.gz ( 38%) 
+Downloading libiconv-1.18.tar.gz ( 39%) 
+Downloading libiconv-1.18.tar.gz ( 39%) 
+Downloading libiconv-1.18.tar.gz ( 39%) 
+Downloading libiconv-1.18.tar.gz ( 39%) 
+Downloading libiconv-1.18.tar.gz ( 40%) 
+Downloading libiconv-1.18.tar.gz ( 40%) 
+Downloading libiconv-1.18.tar.gz ( 40%) 
+Downloading libiconv-1.18.tar.gz ( 41%) 
+Downloading libiconv-1.18.tar.gz ( 41%) 
+Downloading libiconv-1.18.tar.gz ( 41%) 
+Downloading libiconv-1.18.tar.gz ( 41%) 
+Downloading libiconv-1.18.tar.gz ( 42%) 
+Downloading libiconv-1.18.tar.gz ( 42%) 
+Downloading libiconv-1.18.tar.gz ( 42%) 
+Downloading libiconv-1.18.tar.gz ( 43%) 
+Downloading libiconv-1.18.tar.gz ( 43%) 
+Downloading libiconv-1.18.tar.gz ( 43%) 
+Downloading libiconv-1.18.tar.gz ( 43%) 
+Downloading libiconv-1.18.tar.gz ( 44%) 
+Downloading libiconv-1.18.tar.gz ( 44%) 
+Downloading libiconv-1.18.tar.gz ( 44%) 
+Downloading libiconv-1.18.tar.gz ( 45%) 
+Downloading libiconv-1.18.tar.gz ( 45%) 
+Downloading libiconv-1.18.tar.gz ( 45%) 
+Downloading libiconv-1.18.tar.gz ( 45%) 
+Downloading libiconv-1.18.tar.gz ( 46%) 
+Downloading libiconv-1.18.tar.gz ( 46%) 
+Downloading libiconv-1.18.tar.gz ( 46%) 
+Downloading libiconv-1.18.tar.gz ( 46%) 
+Downloading libiconv-1.18.tar.gz ( 47%) 
+Downloading libiconv-1.18.tar.gz ( 47%) 
+Downloading libiconv-1.18.tar.gz ( 47%) 
+Downloading libiconv-1.18.tar.gz ( 48%) 
+Downloading libiconv-1.18.tar.gz ( 48%) 
+Downloading libiconv-1.18.tar.gz ( 48%) 
+Downloading libiconv-1.18.tar.gz ( 48%) 
+Downloading libiconv-1.18.tar.gz ( 49%) 
+Downloading libiconv-1.18.tar.gz ( 49%) 
+Downloading libiconv-1.18.tar.gz ( 49%) 
+Downloading libiconv-1.18.tar.gz ( 50%) 
+Downloading libiconv-1.18.tar.gz ( 50%) 
+Downloading libiconv-1.18.tar.gz ( 50%) 
+Downloading libiconv-1.18.tar.gz ( 50%) 
+Downloading libiconv-1.18.tar.gz ( 51%) 
+Downloading libiconv-1.18.tar.gz ( 51%) 
+Downloading libiconv-1.18.tar.gz ( 51%) 
+Downloading libiconv-1.18.tar.gz ( 52%) 
+Downloading libiconv-1.18.tar.gz ( 52%) 
+Downloading libiconv-1.18.tar.gz ( 52%) 
+Downloading libiconv-1.18.tar.gz ( 52%) 
+Downloading libiconv-1.18.tar.gz ( 53%) 
+Downloading libiconv-1.18.tar.gz ( 53%) 
+Downloading libiconv-1.18.tar.gz ( 53%) 
+Downloading libiconv-1.18.tar.gz ( 54%) 
+Downloading libiconv-1.18.tar.gz ( 54%) 
+Downloading libiconv-1.18.tar.gz ( 54%) 
+Downloading libiconv-1.18.tar.gz ( 54%) 
+Downloading libiconv-1.18.tar.gz ( 55%) 
+Downloading libiconv-1.18.tar.gz ( 55%) 
+Downloading libiconv-1.18.tar.gz ( 55%) 
+Downloading libiconv-1.18.tar.gz ( 55%) 
+Downloading libiconv-1.18.tar.gz ( 56%) 
+Downloading libiconv-1.18.tar.gz ( 56%) 
+Downloading libiconv-1.18.tar.gz ( 56%) 
+Downloading libiconv-1.18.tar.gz ( 57%) 
+Downloading libiconv-1.18.tar.gz ( 57%) 
+Downloading libiconv-1.18.tar.gz ( 57%) 
+Downloading libiconv-1.18.tar.gz ( 57%) 
+Downloading libiconv-1.18.tar.gz ( 58%) 
+Downloading libiconv-1.18.tar.gz ( 58%) 
+Downloading libiconv-1.18.tar.gz ( 58%) 
+Downloading libiconv-1.18.tar.gz ( 59%) 
+Downloading libiconv-1.18.tar.gz ( 59%) 
+Downloading libiconv-1.18.tar.gz ( 59%) 
+Downloading libiconv-1.18.tar.gz ( 59%) 
+Downloading libiconv-1.18.tar.gz ( 60%) 
+Downloading libiconv-1.18.tar.gz ( 60%) 
+Downloading libiconv-1.18.tar.gz ( 60%) 
+Downloading libiconv-1.18.tar.gz ( 61%) 
+Downloading libiconv-1.18.tar.gz ( 61%) 
+Downloading libiconv-1.18.tar.gz ( 61%) 
+Downloading libiconv-1.18.tar.gz ( 61%) 
+Downloading libiconv-1.18.tar.gz ( 62%) 
+Downloading libiconv-1.18.tar.gz ( 62%) 
+Downloading libiconv-1.18.tar.gz ( 62%) 
+Downloading libiconv-1.18.tar.gz ( 63%) 
+Downloading libiconv-1.18.tar.gz ( 63%) 
+Downloading libiconv-1.18.tar.gz ( 63%) 
+Downloading libiconv-1.18.tar.gz ( 63%) 
+Downloading libiconv-1.18.tar.gz ( 64%) 
+Downloading libiconv-1.18.tar.gz ( 64%) 
+Downloading libiconv-1.18.tar.gz ( 64%) 
+Downloading libiconv-1.18.tar.gz ( 64%) 
+Downloading libiconv-1.18.tar.gz ( 65%) 
+Downloading libiconv-1.18.tar.gz ( 65%) 
+Downloading libiconv-1.18.tar.gz ( 65%) 
+Downloading libiconv-1.18.tar.gz ( 66%) 
+Downloading libiconv-1.18.tar.gz ( 66%) 
+Downloading libiconv-1.18.tar.gz ( 66%) 
+Downloading libiconv-1.18.tar.gz ( 66%) 
+Downloading libiconv-1.18.tar.gz ( 67%) 
+Downloading libiconv-1.18.tar.gz ( 67%) 
+Downloading libiconv-1.18.tar.gz ( 67%) 
+Downloading libiconv-1.18.tar.gz ( 68%) 
+Downloading libiconv-1.18.tar.gz ( 68%) 
+Downloading libiconv-1.18.tar.gz ( 68%) 
+Downloading libiconv-1.18.tar.gz ( 68%) 
+Downloading libiconv-1.18.tar.gz ( 69%) 
+Downloading libiconv-1.18.tar.gz ( 69%) 
+Downloading libiconv-1.18.tar.gz ( 69%) 
+Downloading libiconv-1.18.tar.gz ( 70%) 
+Downloading libiconv-1.18.tar.gz ( 70%) 
+Downloading libiconv-1.18.tar.gz ( 70%) 
+Downloading libiconv-1.18.tar.gz ( 70%) 
+Downloading libiconv-1.18.tar.gz ( 71%) 
+Downloading libiconv-1.18.tar.gz ( 71%) 
+Downloading libiconv-1.18.tar.gz ( 71%) 
+Downloading libiconv-1.18.tar.gz ( 72%) 
+Downloading libiconv-1.18.tar.gz ( 72%) 
+Downloading libiconv-1.18.tar.gz ( 72%) 
+Downloading libiconv-1.18.tar.gz ( 72%) 
+Downloading libiconv-1.18.tar.gz ( 73%) 
+Downloading libiconv-1.18.tar.gz ( 73%) 
+Downloading libiconv-1.18.tar.gz ( 73%) 
+Downloading libiconv-1.18.tar.gz ( 74%) 
+Downloading libiconv-1.18.tar.gz ( 74%) 
+Downloading libiconv-1.18.tar.gz ( 74%) 
+Downloading libiconv-1.18.tar.gz ( 74%) 
+Downloading libiconv-1.18.tar.gz ( 75%) 
+Downloading libiconv-1.18.tar.gz ( 75%) 
+Downloading libiconv-1.18.tar.gz ( 75%) 
+Downloading libiconv-1.18.tar.gz ( 75%) 
+Downloading libiconv-1.18.tar.gz ( 76%) 
+Downloading libiconv-1.18.tar.gz ( 76%) 
+Downloading libiconv-1.18.tar.gz ( 76%) 
+Downloading libiconv-1.18.tar.gz ( 77%) 
+Downloading libiconv-1.18.tar.gz ( 77%) 
+Downloading libiconv-1.18.tar.gz ( 77%) 
+Downloading libiconv-1.18.tar.gz ( 77%) 
+Downloading libiconv-1.18.tar.gz ( 78%) 
+Downloading libiconv-1.18.tar.gz ( 78%) 
+Downloading libiconv-1.18.tar.gz ( 78%) 
+Downloading libiconv-1.18.tar.gz ( 79%) 
+Downloading libiconv-1.18.tar.gz ( 79%) 
+Downloading libiconv-1.18.tar.gz ( 79%) 
+Downloading libiconv-1.18.tar.gz ( 79%) 
+Downloading libiconv-1.18.tar.gz ( 80%) 
+Downloading libiconv-1.18.tar.gz ( 80%) 
+Downloading libiconv-1.18.tar.gz ( 80%) 
+Downloading libiconv-1.18.tar.gz ( 81%) 
+Downloading libiconv-1.18.tar.gz ( 81%) 
+Downloading libiconv-1.18.tar.gz ( 81%) 
+Downloading libiconv-1.18.tar.gz ( 81%) 
+Downloading libiconv-1.18.tar.gz ( 82%) 
+Downloading libiconv-1.18.tar.gz ( 82%) 
+Downloading libiconv-1.18.tar.gz ( 82%) 
+Downloading libiconv-1.18.tar.gz ( 83%) 
+Downloading libiconv-1.18.tar.gz ( 83%) 
+Downloading libiconv-1.18.tar.gz ( 83%) 
+Downloading libiconv-1.18.tar.gz ( 83%) 
+Downloading libiconv-1.18.tar.gz ( 84%) 
+Downloading libiconv-1.18.tar.gz ( 84%) 
+Downloading libiconv-1.18.tar.gz ( 84%) 
+Downloading libiconv-1.18.tar.gz ( 84%) 
+Downloading libiconv-1.18.tar.gz ( 85%) 
+Downloading libiconv-1.18.tar.gz ( 85%) 
+Downloading libiconv-1.18.tar.gz ( 85%) 
+Downloading libiconv-1.18.tar.gz ( 86%) 
+Downloading libiconv-1.18.tar.gz ( 86%) 
+Downloading libiconv-1.18.tar.gz ( 86%) 
+Downloading libiconv-1.18.tar.gz ( 86%) 
+Downloading libiconv-1.18.tar.gz ( 87%) 
+Downloading libiconv-1.18.tar.gz ( 87%) 
+Downloading libiconv-1.18.tar.gz ( 87%) 
+Downloading libiconv-1.18.tar.gz ( 88%) 
+Downloading libiconv-1.18.tar.gz ( 88%) 
+Downloading libiconv-1.18.tar.gz ( 88%) 
+Downloading libiconv-1.18.tar.gz ( 88%) 
+Downloading libiconv-1.18.tar.gz ( 89%) 
+Downloading libiconv-1.18.tar.gz ( 89%) 
+Downloading libiconv-1.18.tar.gz ( 89%) 
+Downloading libiconv-1.18.tar.gz ( 90%) 
+Downloading libiconv-1.18.tar.gz ( 90%) 
+Downloading libiconv-1.18.tar.gz ( 90%) 
+Downloading libiconv-1.18.tar.gz ( 90%) 
+Downloading libiconv-1.18.tar.gz ( 91%) 
+Downloading libiconv-1.18.tar.gz ( 91%) 
+Downloading libiconv-1.18.tar.gz ( 91%) 
+Downloading libiconv-1.18.tar.gz ( 92%) 
+Downloading libiconv-1.18.tar.gz ( 92%) 
+Downloading libiconv-1.18.tar.gz ( 92%) 
+Downloading libiconv-1.18.tar.gz ( 92%) 
+Downloading libiconv-1.18.tar.gz ( 93%) 
+Downloading libiconv-1.18.tar.gz ( 93%) 
+Downloading libiconv-1.18.tar.gz ( 93%) 
+Downloading libiconv-1.18.tar.gz ( 93%) 
+Downloading libiconv-1.18.tar.gz ( 94%) 
+Downloading libiconv-1.18.tar.gz ( 94%) 
+Downloading libiconv-1.18.tar.gz ( 94%) 
+Downloading libiconv-1.18.tar.gz ( 95%) 
+Downloading libiconv-1.18.tar.gz ( 95%) 
+Downloading libiconv-1.18.tar.gz ( 95%) 
+Downloading libiconv-1.18.tar.gz ( 95%) 
+Downloading libiconv-1.18.tar.gz ( 96%) 
+Downloading libiconv-1.18.tar.gz ( 96%) 
+Downloading libiconv-1.18.tar.gz ( 96%) 
+Downloading libiconv-1.18.tar.gz ( 97%) 
+Downloading libiconv-1.18.tar.gz ( 97%) 
+Downloading libiconv-1.18.tar.gz ( 97%) 
+Downloading libiconv-1.18.tar.gz ( 97%) 
+Downloading libiconv-1.18.tar.gz ( 98%) 
+Downloading libiconv-1.18.tar.gz ( 98%) 
+Downloading libiconv-1.18.tar.gz ( 98%) 
+Downloading libiconv-1.18.tar.gz ( 99%) 
+Downloading libiconv-1.18.tar.gz ( 99%) 
+Downloading libiconv-1.18.tar.gz ( 99%) 
+Downloading libiconv-1.18.tar.gz ( 99%) 
+Downloading libiconv-1.18.tar.gz (100%) 
+Extracting libiconv-1.18.tar.gz into tmp/x86_64-w64-mingw32/ports/libiconv/1.18... OK
+Running 'configure' for libiconv 1.18... OK
+Running 'compile' for libiconv 1.18... ERROR. Please review logs to see what happened:
+----- contents of 'C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/compile.log' -----
+builddir="`pwd`"; cd libcharset && make all && make install-lib libdir="$builddir/lib" includedir="$builddir/lib"
+make[1]: Entering directory '/c/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/libiconv-1.18/libcharset'
+cd lib && make all
+make[2]: Entering directory '/c/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/libiconv-1.18/libcharset/lib'
+/bin/sh ../libtool --mode=compile gcc -I. -I. -I.. -I./.. -I../include -O2 -g -fPIC  -Wall -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./localcharset.c
+libtool: compile:  gcc -I. -I. -I.. -I./.. -I../include -O2 -g -fPIC -Wall -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./localcharset.c -o localcharset.o
+/bin/sh ../libtool --mode=compile gcc -I. -I. -I.. -I./.. -I../include -O2 -g -fPIC  -Wall -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./relocatable-stub.c
+libtool: compile:  gcc -I. -I. -I.. -I./.. -I../include -O2 -g -fPIC -Wall -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./relocatable-stub.c -o relocatable-stub.o
+/bin/sh ../libtool --mode=link gcc  -O2 -g -fPIC  -o libcharset.la -rpath C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ports/x64-mingw-ucrt/libiconv/1.18/lib -version-info 1:0:0 -no-undefined localcharset.lo relocatable-stub.lo
+/bin/sh: -c: line 1: syntax error near unexpected token `('
+/bin/sh: -c: line 1: `/bin/sh ../libtool --mode=link gcc  -O2 -g -fPIC  -o libcharset.la -rpath C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ports/x64-mingw-ucrt/libiconv/1.18/lib -version-info 1:0:0 -no-undefined localcharset.lo relocatable-stub.lo'
+make[2]: *** [Makefile:55: libcharset.la] Error 2
+make[2]: Leaving directory '/c/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/libiconv-1.18/libcharset/lib'
+make[1]: *** [Makefile:34: all] Error 2
+make[1]: Leaving directory '/c/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.19.0/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.18/libiconv-1.18/libcharset'
+make: *** [Makefile:41: lib/localcharset.h] Error 2
+----- end of file -----
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include=${opt-dir}/include
+	--without-opt-include
+	--with-opt-lib=${opt-dir}/lib
+	--without-opt-lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=C:/Ruby34-x64/bin/$(RUBY_BASE_NAME)
+	--help
+	--clean
+	--prevent-strip
+	--enable-system-libraries
+	--disable-system-libraries
+	--use-system-libraries
+	--enable-system-libraries
+	--disable-system-libraries
+	--use-system-libraries
+	--enable-static
+	--disable-static
+	--enable-cross-build
+	--disable-cross-build
+	--enable-cross-build
+	--disable-cross-build
+	--enable-xml2-legacy
+	--disable-xml2-legacy
+	--with-zlib-dir
+	--without-zlib-dir
+	--with-zlib-include=${zlib-dir}/include
+	--without-zlib-include
+	--with-zlib-lib=${zlib-dir}/lib
+	--without-zlib-lib
+	--enable-xml2-legacy
+	--disable-xml2-legacy
+C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/mini_portile2-2.8.9/lib/mini_portile2/mini_portile.rb:628:in 'block in MiniPortile#execute': Failed to complete compile task (RuntimeError)
+	from C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/mini_portile2-2.8.9/lib/mini_portile2/mini_portile.rb:594:in 'Dir.chdir'
+	from C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/mini_portile2-2.8.9/lib/mini_portile2/mini_portile.rb:594:in 'MiniPortile#execute'
+	from C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/mini_portile2-2.8.9/lib/mini_portile2/mini_portile.rb:195:in 'MiniPortile#compile'
+	from C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/mini_portile2-2.8.9/lib/mini_portile2/mini_portile.rb:238:in 'MiniPortile#cook'
+	from extconf.rb:550:in 'block (2 levels) in Object#process_recipe'
+	from extconf.rb:329:in 'Dir.chdir'
+	from extconf.rb:329:in 'Object#chdir_for_build'
+	from extconf.rb:550:in 'block in Object#process_recipe'
+	from <internal:kernel>:91:in 'Kernel#tap'
+	from extconf.rb:448:in 'Object#process_recipe'
+	from extconf.rb:828:in '<main>'
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/extensions/x64-mingw-ucrt/3.4.0/nokogiri-1.19.0/mkmf.log
+
+extconf failed, exit code 1
