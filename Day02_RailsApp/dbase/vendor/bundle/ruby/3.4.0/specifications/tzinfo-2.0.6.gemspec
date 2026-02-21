@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.4.5".freeze
   s.summary = "Time Zone Library".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 
   s.specification_version = 4
 

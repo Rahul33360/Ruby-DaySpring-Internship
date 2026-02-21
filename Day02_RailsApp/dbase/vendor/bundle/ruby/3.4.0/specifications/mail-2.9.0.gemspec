@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.5.23".freeze
   s.summary = "Mail provides a nice Ruby DSL for making, sending and reading emails.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 
   s.specification_version = 4
 

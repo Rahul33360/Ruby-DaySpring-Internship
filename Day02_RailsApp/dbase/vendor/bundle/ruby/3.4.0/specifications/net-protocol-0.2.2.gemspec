@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.5.0.dev".freeze
   s.summary = "The abstract interface for net-* client.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 
   s.specification_version = 4
 

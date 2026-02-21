@@ -1,4 +1,4 @@
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
 C:/Ruby34-x64/bin/ruby.exe extconf.rb
 checking for __builtin_clz()... yes
 checking for __builtin_clzl()... yes
@@ -25,19 +25,19 @@ checking for rb_category_warn() in ruby.h... yes
 checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-dpz9x2 sitelibdir\=./.gem.20260220-6628-dpz9x2 clean
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-9rkmls sitelibdir\=./.gem.20260220-18140-9rkmls clean
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-dpz9x2 sitelibdir\=./.gem.20260220-6628-dpz9x2
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-9rkmls sitelibdir\=./.gem.20260220-18140-9rkmls
 generating bigdecimal-x64-mingw-ucrt.def
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-dpz9x2 sitelibdir\=./.gem.20260220-6628-dpz9x2 install
-/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20260220-6628-dpz9x2
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-9rkmls sitelibdir\=./.gem.20260220-18140-9rkmls install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20260220-18140-9rkmls
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-dpz9x2 sitelibdir\=./.gem.20260220-6628-dpz9x2 clean
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.0.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20260220-18140-9rkmls sitelibdir\=./.gem.20260220-18140-9rkmls clean

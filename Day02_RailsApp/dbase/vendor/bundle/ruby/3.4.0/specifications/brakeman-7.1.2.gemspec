@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.4.1".freeze
   s.summary = "Security vulnerability scanner for Ruby on Rails.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 
   s.specification_version = 4
 

@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.5.9".freeze
   s.summary = "A simple and reliable solution for controlling external programs running in the background on any Ruby / OS combination.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 
   s.specification_version = 4
 

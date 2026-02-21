@@ -87,7 +87,7 @@ warnflags = -Wall -Wextra -Wdeprecated-declarations -Wdiv-by-zero -Wduplicated-c
 cppflags = 
 CCDLFLAGS = 
 CFLAGS   = $(CCDLFLAGS) -O3 -fstack-protector-strong -fvisibility=hidden $(ARCH_FLAG)
-INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) "-IC:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/prism-1.8.0/include" "-IC:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/prism-1.8.0/ext"
+INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) -IC:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/prism-1.8.0/include -IC:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/prism-1.8.0/ext
 DEFS     = -D_FILE_OFFSET_BITS=64
 CPPFLAGS =  -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) -Wno-dll-attribute-on-redeclaration $(ARCH_FLAG)

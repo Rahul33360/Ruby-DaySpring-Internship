@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.6.9".freeze
   s.summary = "Pg is the Ruby interface to the PostgreSQL RDBMS".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 end

@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.5.16".freeze
   s.summary = "An efficient digital signature library providing the Ed25519 algorithm".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 
   s.specification_version = 4
 

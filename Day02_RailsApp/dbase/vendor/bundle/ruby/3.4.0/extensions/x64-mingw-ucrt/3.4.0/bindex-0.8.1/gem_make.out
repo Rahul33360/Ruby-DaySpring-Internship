@@ -1,19 +1,19 @@
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
 C:/Ruby34-x64/bin/ruby.exe extconf.rb
 creating Makefile
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-43e1v4 sitelibdir\=./.gem.20260220-6628-43e1v4 clean
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-9626bz sitelibdir\=./.gem.20260220-18140-9626bz clean
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-43e1v4 sitelibdir\=./.gem.20260220-6628-43e1v4
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-9626bz sitelibdir\=./.gem.20260220-18140-9626bz
 generating cruby-x64-mingw-ucrt.def
 compiling cruby.c
 linking shared-object skiptrace/internal/cruby.so
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-43e1v4 sitelibdir\=./.gem.20260220-6628-43e1v4 install
-/usr/bin/install -c -m 0755 cruby.so ./.gem.20260220-6628-43e1v4/skiptrace/internal
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-9626bz sitelibdir\=./.gem.20260220-18140-9626bz install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20260220-18140-9626bz/skiptrace/internal
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-43e1v4 sitelibdir\=./.gem.20260220-6628-43e1v4 clean
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260220-18140-9626bz sitelibdir\=./.gem.20260220-18140-9626bz clean

@@ -4470,3 +4470,1040 @@ These methods are created dynamically using Meta-programming.
 
 ---
 
+# Day 28
+
+## Anonymous Methods
+
+### Definition
+
+Anonymous methods are methods without name.
+
+They are used to write reusable logic without defining full method.
+
+Ruby provides anonymous methods using:
+
+1) yield (block)  
+2) proc  
+3) lambda (will cover later)  
+
+They are mainly used for:
+
+* code reuse  
+* dynamic logic execution  
+* passing logic as argument  
+
+## Types of Anonymous Methods
+
+### 1) yield (Block)
+
+#### Definition
+
+yield is used inside method to execute block passed to that method.
+
+Block is passed using:
+
+```
+do...end
+```
+
+or
+
+```
+{}
+```
+
+Block is parameterized when we need to pass values.
+
+#### Example 1 (Simple example)
+
+```ruby
+def greet
+  yield
+end
+
+greet do
+  puts "Hello from block"
+end
+```
+
+Output:
+
+```
+Hello from block
+```
+
+Explanation:
+
+yield calls the block passed to method.
+
+#### Example 2 (Parameterized block)
+
+```ruby
+def greet
+  yield("Rahul")
+end
+
+greet do |name|
+  puts "Hello #{name}"
+end
+```
+
+Output:
+
+```
+Hello Rahul
+```
+
+#### Example 3 each_cons(2)
+
+each_cons(2) gives access to two values at same time.
+
+```ruby
+arr = [1, 2, 3, 4]
+
+arr.each_cons(2) do |a, b|
+  puts "#{a}, #{b}"
+end
+```
+
+Output:
+
+```
+1, 2
+2, 3
+3, 4
+```
+
+#### Example 4 each_with_index
+
+each_with_index gives value with index.
+
+```ruby
+arr = ["a", "b", "c"]
+
+arr.each_with_index do |val, index|
+  puts "#{val} at #{index}"
+end
+```
+
+Output:
+
+```
+a at 0
+b at 1
+c at 2
+```
+
+#### Limitation of block
+
+One yield can execute only one block logic at a time.
+
+Block is not object, so cannot store block in variable.
+
+#### Example in Rails (respond_to in controller)
+
+Rails uses blocks internally.
+
+Example:
+
+```ruby
+respond_to do |format|
+  format.html
+  format.json
+end
+```
+
+Block is passed to respond_to method.
+
+## Important Note (Asset loading)
+
+source tag should be used only in:
+
+```
+application.html.erb
+```
+
+And should be used only once.
+
+Reason:
+
+* Good practice  
+* Reduce latency  
+* Improve performance  
+
+### 2) Proc
+
+#### Definition
+
+Proc is object that contains block of code.
+
+Proc can be stored in variable and executed later.
+
+Proc is reusable.
+
+#### Creating Proc
+
+```ruby
+v = proc.new { puts "a" }
+```
+
+Calling Proc:
+
+```ruby
+v.call
+```
+
+Output:
+
+```
+a
+```
+
+#### Parameterized Proc
+
+```ruby
+val = proc.new { |a| puts "#{a}" }
+
+val.call(2)
+```
+
+Output:
+
+```
+2
+```
+
+#### Important Note
+
+If no parameter is passed, proc assigns nil automatically.
+
+Example:
+
+```ruby
+val = proc.new { |a| puts "#{a}" }
+
+val.call
+```
+
+Output:
+
+```
+(blank line)
+```
+
+No error occurs.
+
+#### Proc with multiple parameters
+
+```ruby
+val = proc.new { |a, b| puts "#{a}, #{b}" }
+
+val.call(1, 2)
+```
+
+Output:
+
+```
+1, 2
+```
+
+#### Proc return behavior
+
+Proc can return from calling method.
+
+Example:
+
+```ruby
+def method_test
+  p1 = proc.new { return "A" }
+  p1.call
+  return "B"
+end
+
+puts method_test
+```
+
+Output:
+
+```
+A
+```
+
+Explanation:
+
+Proc exits entire method immediately.
+
+#### Proc can have multiple logic
+
+Example:
+
+```ruby
+p1 = proc.new do
+  puts "Step 1"
+  puts "Step 2"
+end
+
+p1.call
+```
+
+Output:
+
+```
+Step 1
+Step 2
+```
+
+Proc can execute multiple logic inside block.
+
+## Difference between Block and Proc
+
+| Feature | Block | Proc |
+|--------|-------|------|
+| Object | Not object | Object |
+| Stored in variable | No | Yes |
+| Reusable | No | Yes |
+| Parameters | Flexible | Flexible |
+| Return behavior | Normal | Returns from calling method |
+
+
+### 3) lambda (->)
+
+#### Definition
+
+lambda is also anonymous method like proc.
+
+It is object and can be stored in variable and executed later.
+
+lambda is more strict (rigid) compared to proc.
+
+Syntax uses arrow operator:
+
+```
+->
+```
+
+#### Example (simple lambda)
+
+```ruby
+l = -> { puts "a" }
+
+l.call
+```
+
+Output:
+
+```
+a
+```
+
+#### Parameterized lambda
+
+```ruby
+p = ->(val1, val2) { puts "#{val1}, #{val2}" }
+
+p.call("a", "b")
+```
+
+Output:
+
+```
+a, b
+```
+
+#### Important Note (parameter behavior)
+
+lambda requires exact number of parameters.
+
+Example:
+
+```ruby
+l = ->(a, b) { puts "#{a}, #{b}" }
+
+l.call(1)
+```
+
+Output:
+
+```
+ArgumentError
+```
+
+Explanation:
+
+lambda is strict with parameters.
+
+#### Return behavior of lambda
+
+lambda returns only from lambda, not from entire method.
+
+Example:
+
+```ruby
+def test
+  l = -> { return "A" }
+  l.call
+  return "B"
+end
+
+puts test
+```
+
+Output:
+
+```
+B
+```
+
+Explanation:
+
+lambda does not terminate entire method.
+
+It only exits lambda.
+
+## Difference between Block, Proc and Lambda
+
+| Feature | Block | Proc | Lambda |
+|--------|-------|------|--------|
+| Object | Not object | Object | Object |
+| Stored in variable | No | Yes | Yes |
+| Parameter behavior | Flexible | Flexible | Strict |
+| Return behavior | Normal | Returns from method | Returns from lambda only |
+| Reusable | No | Yes | Yes |
+| Syntax | yield | proc.new | -> |
+
+## Important Note
+
+proc and lambda are objects but block is not object.
+
+Because block cannot be stored in variable directly.
+
+## Why lambda is used more in scopes (Rails)
+
+lambda has strict behavior.
+
+Scopes require strict parameter handling.
+
+Example in Rails:
+
+```ruby
+scope :active, -> { where(active: true) }
+```
+
+lambda ensures correct execution.
+
+## Singleton class / Meta class / Eigen class / Anonymous class
+
+All these names refer to same concept.
+
+It is special hidden class created for individual object.
+
+It allows defining methods for specific object only.
+
+#### Example
+
+```ruby
+obj = "Rahul"
+
+def obj.greet
+  puts "Hello Rahul"
+end
+
+obj.greet
+```
+
+Output:
+
+```
+Hello Rahul
+```
+
+This greet method belongs only to obj, not String class.
+
+#### Another way using singleton class
+
+```ruby
+obj = "Rahul"
+
+class << obj
+  def greet
+    puts "Hello from singleton class"
+  end
+end
+
+obj.greet
+```
+
+Output:
+
+```
+Hello from singleton class
+```
+
+## class_eval
+
+#### Definition
+
+class_eval is used to add instance methods dynamically to class.
+
+Method can be called using object.
+
+#### Example
+
+```ruby
+class User
+end
+
+User.class_eval do
+  def greet
+    puts "Hello User"
+  end
+end
+
+User.new.greet
+```
+
+Output:
+
+```
+Hello User
+```
+
+## instance_eval
+
+#### Definition
+
+instance_eval is used to add methods to object or class as class method.
+
+Method is called using class name.
+
+#### Example
+
+```ruby
+class User
+end
+
+User.instance_eval do
+  def greet
+    puts "Hello from class method"
+  end
+end
+
+User.greet
+```
+
+Output:
+
+```
+Hello from class method
+```
+
+## Difference between class_eval and instance_eval
+
+| Feature | class_eval | instance_eval |
+|--------|-------------|---------------|
+| Adds method type | Instance method | Class method |
+| Called using | Object | Class |
+| Scope | Class | Specific object or class |
+
+---
+
+# Day 29 Routes, Status Code
+
+## Routes
+
+### Definition
+
+Routes define how incoming request URL maps to controller and action.
+
+Syntax location:
+
+```
+config/routes.rb
+```
+
+Example:
+
+```ruby
+get "/users", to: "users#index"
+```
+
+Meaning:
+
+Request → /users  
+Controller → users_controller  
+Action → index  
+
+### Routes auto generate when controller generate
+
+When we generate controller using command:
+
+```ruby
+rails generate controller Users index show create
+```
+
+Rails automatically creates routes inside:
+
+```
+config/routes.rb
+```
+
+## Nested routes using draw
+
+### Definition
+
+draw is used to create set of routes from different file.
+
+It helps to organize routes in separate files.
+
+Good practice when application has large number of routes.
+
+### Syntax
+
+Inside:
+
+```
+config/routes.rb
+```
+
+```ruby
+Rails.application.routes.draw do
+  draw :admin
+end
+```
+
+### Important Note
+
+If you use:
+
+```ruby
+draw :admin
+```
+
+and file does not exist, it gives error.
+
+So we must create file manually.
+
+### Required folder structure
+
+Create folder:
+
+```
+config/routes
+```
+
+Inside create file:
+
+```
+config/routes/admin.rb
+```
+
+### Example admin.rb
+
+```ruby
+namespace :admin do
+  get "dashboard", to: "dashboard#index"
+end
+```
+
+### Why we use draw?
+
+* To organize routes properly  
+* Avoid large routes.rb file  
+* Improve readability  
+* Separate routes based on modules  
+
+Example:
+
+```
+config/routes/admin.rb
+config/routes/api.rb
+config/routes/user.rb
+```
+
+## namespace
+
+### Definition
+
+namespace is used to group controllers under module.
+
+It automatically adds:
+
+* URL prefix  
+* Module prefix  
+
+### Example
+
+```ruby
+namespace :admin do
+  get "dashboard", to: "dashboard#index"
+end
+```
+
+URL:
+
+```
+/admin/dashboard
+```
+
+Controller location:
+
+```
+app/controllers/admin/dashboard_controller.rb
+```
+
+Controller:
+
+```ruby
+class Admin::DashboardController < ApplicationController
+  def index
+  end
+end
+```
+
+## member and collection
+
+Used inside resources.
+
+### member
+
+member works on single resource.
+
+It requires id.
+
+Example:
+
+```ruby
+resources :products do
+  member do
+    get :preview
+  end
+end
+```
+
+Generated route:
+
+```
+/products/:id/preview
+```
+
+Helper:
+
+```
+preview_product_path(product)
+```
+
+### collection
+
+collection works on entire collection.
+
+Does not require id.
+
+Example:
+
+```ruby
+resources :products do
+  collection do
+    get :search
+  end
+end
+```
+
+Generated route:
+
+```
+/products/search
+```
+
+Helper:
+
+```
+search_products_path
+```
+
+## scope
+
+### Definition
+
+scope is used to group routes without changing controller module automatically.
+
+Used when:
+
+* Want URL prefix  
+* But do not want module prefix  
+
+### Example
+
+```ruby
+scope "/admin" do
+  get "dashboard", to: "dashboard#index"
+end
+```
+
+URL:
+
+```
+/admin/dashboard
+```
+
+Controller:
+
+```
+dashboard_controller.rb
+```
+
+Note:
+
+namespace adds module automatically.
+
+scope does not add module automatically.
+
+## as keyword
+
+### Definition
+
+as keyword is used to create custom route helper name.
+
+### Example
+
+```ruby
+get "/profile", to: "users#show", as: "user_profile"
+```
+
+Helper created:
+
+```
+user_profile_path
+```
+
+Use in view:
+
+```erb
+<%= link_to "Profile", user_profile_path %>
+```
+
+## Rails helper generation
+
+Rails automatically generates helper methods for routes.
+
+Example:
+
+```ruby
+resources :products
+```
+
+Generated helpers:
+
+```
+products_path
+new_product_path
+edit_product_path
+product_path(product)
+```
+
+These helpers are used in views and controllers.
+
+
+## Status Code
+
+### Definition
+
+Status code is response code sent by server to client.
+
+It tells whether request is successful, failed, or redirected.
+
+Status codes range from:
+
+```
+100 – 500
+```
+
+Categories:
+
+```
+100–199 → Informational
+200–299 → Success
+300–399 → Redirection
+400–499 → Client Error
+500–599 → Server Error
+```
+
+## 100 Range (Informational)
+
+These codes indicate request received and processing continues.
+
+### 100 Continue
+
+Server received request and client should continue sending request.
+
+### 101 Switching Protocols
+
+Server switching protocol (example HTTP → WebSocket).
+
+## 200 Range (Success)
+
+These indicate request successful.
+
+### 200 OK
+
+Request successful.
+
+Most common status code.
+
+Example:
+
+```
+GET request success
+```
+
+### 201 Created
+
+Resource successfully created.
+
+Example:
+
+```
+POST request success
+```
+
+Used when creating new record.
+
+### 202 Accepted
+
+Request accepted but processing not completed yet.
+
+Used in background jobs.
+
+### 204 No Content
+
+Request successful but no content returned.
+
+Example:
+
+```
+Delete request success
+```
+
+## 300 Range (Redirection)
+
+These indicate request redirected.
+
+Example:
+
+### 301 Moved Permanently
+
+Resource moved permanently.
+
+### 302 Found
+
+Temporary redirection.
+
+Rails example:
+
+```ruby
+redirect_to root_path
+```
+
+## 400 – 499 Range (Client Error)
+
+These errors occur due to client request mistake.
+
+### 401 Unauthorized
+
+Authentication required.
+
+User not logged in.
+
+### 403 Forbidden
+
+User authenticated but not allowed to access resource.
+
+Permission denied.
+
+### 404 Not Found
+
+Resource not found.
+
+Example:
+
+```
+Invalid URL
+```
+
+### 405 Method Not Allowed
+
+HTTP method not allowed.
+
+Example:
+
+```
+POST used instead of GET
+```
+
+### 422 Unprocessable Entity
+
+Validation failed.
+
+Example:
+
+```ruby
+user.save
+```
+
+If validation fails, Rails returns 422.
+
+### 429 Too Many Requests
+
+Client sending too many requests.
+
+Used in rate limiting.
+
+## 500 – 599 Range (Server Error)
+
+These errors occur due to server failure.
+
+### 500 Internal Server Error
+
+Server code error.
+
+Example:
+
+```
+Syntax error
+Nil error
+```
+
+### 502 Bad Gateway
+
+Invalid response from another server.
+
+Used in proxy servers.
+
+### 503 Service Unavailable
+
+Server temporarily unavailable.
+
+Example:
+
+```
+Server down
+Maintenance
+```
+
+### 504 Gateway Timeout
+
+Server did not receive response in time.
+
+Timeout error.
+
+## Status code reference
+
+For full list:
+
+```
+https://statuscode.docs
+```
+
+Provides complete status code documentation.
+
+# END
+---

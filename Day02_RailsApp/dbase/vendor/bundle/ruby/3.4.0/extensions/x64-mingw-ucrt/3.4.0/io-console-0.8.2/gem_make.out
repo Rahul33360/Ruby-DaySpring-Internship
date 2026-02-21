@@ -1,4 +1,4 @@
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
 C:/Ruby34-x64/bin/ruby.exe extconf.rb
 checking for rb_syserr_fail_str(0, Qnil)... yes
 checking for rb_interned_str_cstr()... yes
@@ -13,18 +13,18 @@ checking for ttyname_r()... no
 checking for ttyname()... no
 creating Makefile
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-1lwm3k sitelibdir\=./.gem.20260220-6628-1lwm3k clean
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-rpwva9 sitelibdir\=./.gem.20260220-18140-rpwva9 clean
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-1lwm3k sitelibdir\=./.gem.20260220-6628-1lwm3k
-generating console-x64-mingw-ucrt.def
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-rpwva9 sitelibdir\=./.gem.20260220-18140-rpwva9
 compiling console.c
+generating console-x64-mingw-ucrt.def
 linking shared-object io/console.so
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-1lwm3k sitelibdir\=./.gem.20260220-6628-1lwm3k install
-/usr/bin/install -c -m 0755 console.so ./.gem.20260220-6628-1lwm3k/io
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-rpwva9 sitelibdir\=./.gem.20260220-18140-rpwva9 install
+/usr/bin/install -c -m 0755 console.so ./.gem.20260220-18140-rpwva9/io
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-1lwm3k sitelibdir\=./.gem.20260220-6628-1lwm3k clean
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20260220-18140-rpwva9 sitelibdir\=./.gem.20260220-18140-rpwva9 clean

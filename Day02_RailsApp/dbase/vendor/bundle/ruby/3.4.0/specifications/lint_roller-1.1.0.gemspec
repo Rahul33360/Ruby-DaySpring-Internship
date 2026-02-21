@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.4.14".freeze
   s.summary = "A plugin specification for linter and formatter rulesets".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 end

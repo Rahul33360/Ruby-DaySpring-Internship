@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.6.9".freeze
   s.summary = "Deploy web apps in containers to servers running Docker with zero downtime.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 
   s.specification_version = 4
 

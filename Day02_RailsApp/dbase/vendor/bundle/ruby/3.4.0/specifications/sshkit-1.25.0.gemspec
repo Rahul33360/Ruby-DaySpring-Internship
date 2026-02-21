@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.7.2".freeze
   s.summary = "SSHKit makes it easy to write structured, testable SSH commands in Ruby".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "4.0.6".freeze
 
   s.specification_version = 4
 

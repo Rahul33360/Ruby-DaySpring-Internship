@@ -1,15 +1,15 @@
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
 C:/Ruby34-x64/bin/ruby.exe extconf.rb
 checking for rb_category_warn()... yes
 checking for timezone in time.h with -Werror... no
 checking for altzone in time.h with -Werror... no
 creating Makefile
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-4w6o4h sitelibdir\=./.gem.20260220-6628-4w6o4h clean
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-kvc4w4 sitelibdir\=./.gem.20260220-18140-kvc4w4 clean
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-4w6o4h sitelibdir\=./.gem.20260220-6628-4w6o4h
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-kvc4w4 sitelibdir\=./.gem.20260220-18140-kvc4w4
 generating date_core-x64-mingw-ucrt.def
 compiling date_core.c
 compiling date_parse.c
@@ -17,9 +17,9 @@ compiling date_strftime.c
 compiling date_strptime.c
 linking shared-object date_core.so
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-4w6o4h sitelibdir\=./.gem.20260220-6628-4w6o4h install
-/usr/bin/install -c -m 0755 date_core.so ./.gem.20260220-6628-4w6o4h
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
+make -j9 DESTDIR\= sitearchdir\=./.gem.20260220-18140-kvc4w4 sitelibdir\=./.gem.20260220-18140-kvc4w4 install
+/usr/bin/install -c -m 0755 date_core.so ./.gem.20260220-18140-kvc4w4
 
-current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02 (RailsApp)/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
-make DESTDIR\= sitearchdir\=./.gem.20260220-6628-4w6o4h sitelibdir\=./.gem.20260220-6628-4w6o4h clean
+current directory: C:/Users/KIIT/Desktop/File/Ruby/Internship/Day02_RailsApp/dbase/vendor/bundle/ruby/3.4.0/gems/date-3.5.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20260220-18140-kvc4w4 sitelibdir\=./.gem.20260220-18140-kvc4w4 clean
