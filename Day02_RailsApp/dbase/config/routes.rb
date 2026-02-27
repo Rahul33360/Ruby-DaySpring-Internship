@@ -7,19 +7,19 @@ Rails.application.routes.draw do
   end
 
   # Day 29
-  draw :admin     # segregating huge route file in seprate file
+  # draw :admin     # segregating huge route file in seprate file
   #  get route_name to controller_name index
   # get "payment_modes", to: "payments#payment_modes"   # this has no view (working)
-  root "product1s#index"    # put root at start of applicaiton always
-  get 'payment_modes',to:"payments#payment_modes" 
+  # root "product1s#index"    # put root at start of applicaiton always
+  # get 'payment_modes',to:"payments#payment_modes" 
   # get 'payment_modes',to:"payments#payment_modes", as: "payment_related"
   # get '/data_analytics', to: 'reports#index', constraints: {format: "json"}
-  get '/product1s_json', to:'product1s#index', constraints:{format:"json"}
+  # get '/product1s_json', to:'product1s#index', constraints:{format:"json"}
   # match '/login', to: 'product1s#new', via: [:get,:post]   # at last
   # for match we will write logic in controller. different logic for get and diff logic for post using conditionals
 
   # Day 29 Task
-  get 'payment_listing', to:'payments#index', as: 'listing'
+  # get 'payment_listing', to:'payments#index', as: 'listing'
 
 
   
@@ -36,8 +36,8 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  # resources :customer1s
-  # resources :product1s 
+  resources :customer1s
+  resources :product1s 
   
   # resources :products, except: [:show]  # in place except of skip for rails version below 8
   # resources :product1s, only: [:new, :edit, :create, :update]
@@ -53,10 +53,10 @@ Rails.application.routes.draw do
   resources :product1s do   # example with only also
   # Day 29
       member do
-      get "analytics"
+      get "analytics"       # url ->  /product1s/:id/analytics/
     end 
       collection do
-      get "out_of_stock"
+      get "out_of_stock"    # url ->  /product1s/analytics/
     end
   end
 

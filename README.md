@@ -45,7 +45,7 @@
 
 ---
 
-## Day 1 – Ruby & Rails Basics
+# Day 1 – Ruby & Rails Basics
 
 ### Ruby
 
@@ -83,7 +83,7 @@ Rails projects can be created in multiple ways:
 
 ---
 
-##  Day 2 – PostgreSQL, Scaffold & Console
+#  Day 2 – PostgreSQL, Scaffold & Console
 
 ### Project with PostgreSQL
 
@@ -120,7 +120,7 @@ Controller-only generation: rails generate controller Customers
 
 ---
 
-##  Day 3 – Rails Features & File Structure
+#  Day 3 – Rails Features & File Structure
 
 ### Main Features
 
@@ -146,7 +146,7 @@ Important files:
 * `config/environments/` → environment-specific settings
 
 
-##  Day 4 – app Folder & Ruby Basics
+#  Day 4 – app Folder & Ruby Basics
 
 ### app Folder
 
@@ -180,7 +180,7 @@ All data types are objects.
 
 ---
 
-## Day 5 – Methods, Type Casting & Product Scaffold
+# Day 5 – Methods, Type Casting & Product Scaffold
 
 * Single-line → `#`   
 * Multi-line → `=begin`  `=end`  
@@ -225,7 +225,7 @@ Product.create(name: "P1", description: "The P1 product", price: 900, stock: 30,
 ```
 ---
 
-## Day 6 – Ruby Loops & Enumerable Methods
+# Day 6 – Ruby Loops & Enumerable Methods
 
 ##  Ruby Loops
 
@@ -392,16 +392,14 @@ Key Difference:
 * Methods end with `!` change the data in-place (does changes in same array)
 
 ---
-**Day 7 – Ruby OOPS (Inheritance & Method Overriding)**
----
+# Day 7 – Ruby OOPS (Inheritance & Method Overriding)
+
 ### Classes & Objects
 
 * A class is a blueprint for creating objects.
 * An object is an instance of a class.
 * Methods define the behavior of an object.
 * Instance variables (`@variable`) store object-specific data.
-
----
 
 ### Inheritance
 
@@ -455,7 +453,7 @@ Key Difference:
 
 ---
 
-## Day 8 – Conditional Statements & Methods in Ruby
+# Day 8 – Conditional Statements & Methods in Ruby
 
 ### 1. Conditional Statements
 
@@ -544,7 +542,7 @@ class Product
 end
 ```
 
-## Day 9 Rails Models: Customer & Product Validations
+# Day 9 Rails Models: Customer & Product Validations
 
 ### Customer Model (`Customer < ApplicationRecord`)
 ### Built-in Validations
@@ -711,10 +709,9 @@ end
 
     * Always try creating invalid and valid records in the console to confirm your rules work.
 
-## Day 10 – Rails Scopes
+# Day 10 – Rails Scopes
 
-#### Def:- A scope is a custom query defined in a Rails model. It is mainly used when the same query is needed multiple times.
----
+#### Def:- A scope is a custom query defined in a Rails model. It is mainly used when the same query is needed multiple times
 
 ## Scope Examples
 
@@ -728,8 +725,6 @@ scope :out_of_stock, -> { where("stock <= ?", 0) }
 scope :out_of_stock, -> { where(stock: 0) }
 ```
 
----
-
 ### 2. Writing Custom / Raw SQL Query
 
 Scopes can also contain raw SQL queries.
@@ -737,8 +732,6 @@ Scopes can also contain raw SQL queries.
 ```ruby
 scope :test_scope, -> { query {} }
 ```
-
----
 
 ### 3. Whitelisted products
 
@@ -748,8 +741,6 @@ Fetch products whose IDs are in a given list.
 scope :whitelisted_products, -> { where("id IN (?)", [1, 2, 3]) }
 ```
 
----
-
 ### 4. Unique Emails
 
 Fetch distinct email values from records.
@@ -757,8 +748,6 @@ Fetch distinct email values from records.
 ```ruby
 scope :unique_emails, -> { where(email: "rahul@gmail.com").select(:email).distinct }
 ```
-
----
 
 ### 5. Blacklisted Customers (Parameterized Scope)
 
@@ -774,9 +763,7 @@ Usage:
 @customers = Customer.blacklisted_customers([3, 6, 9, 10])
 ```
 
----
-
-## Method Chaining
+## Scopes Chaining
 
 Scopes can be chained together because they return ActiveRecord relations.
 
@@ -786,9 +773,7 @@ Example:
 Product.out_of_stock.whitelisted_products
 ```
 
----
-
-#### Controller Examples ---like how will use
+#### Controller Examples, like how will use
 
 #### Customers Controller
 
@@ -811,9 +796,9 @@ end
 
 ---
 
-## Day 11 -> Republic Day (no task given)
+# Day 11 -> Republic Day (no task given)
 
-## Day 12 - Notes
+# Day 12 - Notes
 
 | Component Name        | Available From (Rails) | What it is / Why it is used                                                                                        |
 | --------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -883,7 +868,7 @@ Error we get: We will get this error,ActionController::RoutingError , No route m
 
 --- 
 
-## Day 13 (add_column, action_text)
+# Day 13 (add_column, action_text)
 
 ### Some routes commands:
 
@@ -977,7 +962,7 @@ steps 3: write in view (_form, _edit,etc).
 
 ---
 
-## Day 14 (active_storage, column_adding_migration)
+# Day 14 (active_storage, column_adding_migration)
 
 ## Tasks :
 
@@ -1021,7 +1006,7 @@ Ex : rails generate migration AddColumnBirthDateToCustomer1 birth_date:date
 ### For allowing multiple file adding/selection using html.erb add -> multiple:true (in .html.erb file)
 ---
 
-## Day 15 (Action_Mailer) (first sending we will configure)
+# Day 15 (Action_Mailer) (first sending we will configure)
 
 ## Tasks : create Order table in same application
 * Step 1 generate model with col names(details:string, count:int)
@@ -1433,7 +1418,7 @@ Used to fetch records based on position.
 
 ---
 
-## Day 18 – Active Support & Core Extensions
+# Day 18 – Active Support & Core Extensions
 
 
 ## 1) Core Extensions
@@ -5504,6 +5489,236 @@ https://statuscode.docs
 ```
 
 Provides complete status code documentation.
+
+---
+
+# Day 30 Callbacks, Filters and Rake Tasks
+
+## Callbacks
+
+### Definition
+
+Callbacks are methods that run automatically at specific stages of object lifecycle.
+
+They are mainly used to:
+
+* Validate data
+* Modify data before saving
+* Trigger logic after saving
+* Maintain data integrity
+
+Callbacks are always written inside model.
+
+### Validation Callbacks
+
+#### before_validation
+
+Runs before validations execute.
+
+Used to modify or normalize data before validation.
+
+#### after_validation
+
+Runs after validations complete.
+
+### Save Callbacks
+
+#### before_save
+
+Runs before record is saved (both create and update).
+
+#### after_save
+
+Runs after record is saved.
+
+#### around_save
+
+Wraps save process.
+
+Used when we need logic before and after save in single block.
+
+Example structure:
+
+```ruby
+around_save :method_name
+```
+
+### Create Callbacks
+
+#### before_create
+
+Runs only before creating new record.
+
+#### after_create
+
+Runs only after creating new record.
+
+### Update Callbacks
+
+#### before_update
+
+Runs before updating existing record.
+
+#### after_update
+
+Runs after updating record.
+
+### Destroy Callbacks
+
+#### before_destroy
+
+Runs before deleting record.
+
+#### after_destroy
+
+Runs after deleting record.
+
+## Transaction Callbacks
+
+### after_commit
+
+Runs after transaction successfully committed.
+
+Used when we want logic to execute only after database changes are permanently saved.
+
+Example:
+
+Sending email after record successfully saved.
+
+### after_rollback
+
+Runs when transaction fails and rollback happens.
+
+Used when we want to handle failure scenario.
+
+## Controller Filters
+
+Filters are used inside controller.
+
+They control action execution flow.
+
+### before_action
+
+Runs method before controller action.
+
+Example:
+
+```ruby
+before_action :authenticate_user
+```
+
+Used for:
+
+* Authentication
+* Authorization
+* Setting common variables
+
+### after_action
+
+Runs method after controller action.
+
+Used for logging or cleanup.
+
+### around_action
+
+Wraps entire action.
+
+Runs code before and after action.
+
+## Rake Tasks
+
+Rake tasks are used to perform background or one-time tasks manually.
+
+They are created inside:
+
+```
+lib/tasks
+```
+
+Used for:
+
+* Bulk update
+* Data cleanup
+* Serial execution
+* One-time execution
+
+### Rake vs Active Job
+
+Rake task:
+
+* Synchronous
+* Runs manually
+* One-time execution
+
+Active Job:
+
+* Asynchronous
+* Runs in background
+* Used for frequent operations (like sending welcome email to users)
+
+### Below Rails version 5
+
+We use `rake` command.
+
+After Rails 5:
+
+We can use `rails` command for rake tasks.
+
+## Steps to create and use Rake Task
+
+### Step 1: Generate task
+
+```ruby
+rails g task Product1 clean_up_inactive_product1
+```
+
+### Step 2: Check generated task
+
+```ruby
+rake --tasks
+```
+
+This shows list of all tasks.
+
+### Step 3: Execute task
+
+```ruby
+rails product1:clean_up_inactive_product1
+```
+
+This runs the task.
+
+## Cron and Whenever Gem
+
+Cron is used to schedule tasks.
+
+Gem used:
+
+```
+gem "whenever"
+```
+
+Used for:
+
+* Scheduling tasks at specific time
+* Running rake tasks automatically
+
+## Comparison
+
+### Cron + Whenever
+
+* Synchronous
+* Scheduled execution
+
+### Rake Task
+
+* Synchronous
+* Manual execution
+
+### Active Job
+
+* Asynchronous
+* Background execution
 
 # END
 ---

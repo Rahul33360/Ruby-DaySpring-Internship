@@ -1,4 +1,10 @@
 class Product1 < ApplicationRecord
+    # Day 30
+    #    before_validation :mehtod1, mehtod2, ...etc 
+    before_validation :check_role, 
+    def check_role
+    end
+
 
     #  Day22
     #  many to many - product has many orders

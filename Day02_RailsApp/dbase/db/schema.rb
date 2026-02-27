@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_10_061916) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_25_034621) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -61,6 +61,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_10_061916) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "addresses", force: :cascade do |t|
+    t.string "address_one"
+    t.string "address_two"
+    t.datetime "created_at", null: false
+    t.bigint "customer1_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer1_id"], name: "index_addresses_on_customer1_id"
+  end
+
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,10 +80,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_10_061916) do
     t.datetime "created_at", null: false
     t.string "email"
     t.string "name"
-    t.bigint "order_id"
     t.integer "phone_number"
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_customer1s_on_order_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -154,7 +161,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_10_061916) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "customer1s", "orders"
+  add_foreign_key "addresses", "customer1s"
   add_foreign_key "orders", "customer1s"
   add_foreign_key "orders", "product1s"
   add_foreign_key "subscriptions", "offers"

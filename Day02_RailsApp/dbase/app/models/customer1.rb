@@ -9,7 +9,9 @@ class Customer1 < ApplicationRecord
 
     # Day22
     # has_one_belongs
-    belongs_to :order
+    # belongs_to :order
+    has_many :orders
+    has_one :address
 
     # validates :profile_pic, content_type: ['image/png', 'image/jpg', 'image/jpeg']
     # non-parameterised scope.
